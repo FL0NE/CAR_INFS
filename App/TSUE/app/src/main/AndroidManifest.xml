@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".options" />
+        <activity android:name=".start"></activity>
     </application>
 
 </manifest>
