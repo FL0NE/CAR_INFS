@@ -6,4 +6,48 @@
     android:layout_height="match_parent"
     tools:context="com.tsue.dsa.tsue.options">
 
+    <TextView
+        android:id="@+id/ueberschrift"
+        android:layout_width="245dp"
+        android:layout_height="63dp"
+        android:text="Einstellungen"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="-5dp"
+        android:textSize="@dimen/einstellungen_Size"/>
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="50dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="50dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="50dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="184dp"
+        tools:layout_editor_absoluteY="99dp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="50dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="number"
+        tools:layout_editor_absoluteX="270dp"
+        tools:layout_editor_absoluteY="99dp" />
 </android.support.constraint.ConstraintLayout>
