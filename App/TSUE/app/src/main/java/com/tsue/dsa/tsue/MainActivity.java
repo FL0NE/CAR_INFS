@@ -1,6 +1,5 @@
 package com.tsue.dsa.tsue;
 
-<<<<<<< HEAD
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
@@ -24,6 +23,13 @@ import com.tsue.dsa.tsue.obd.OBDConnector;
 import com.tsue.dsa.tsue.obd.PeriodicOBDConnector;
 import com.tsue.dsa.tsue.ui.ButtonClickHandler;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 
 /**
@@ -37,16 +43,6 @@ public class MainActivity extends Activity {
     private BluetoothHelper bluetoothHelper;
     private ButtonClickHandler buttonClickHandler;
     private BluetoothDevice bluetoothDevice;
-=======
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ProgressBar;
-import android.widget.TextView;
->>>>>>> 8ad165af9e4191dc815033dd19290b09cf8722df
-
 
 
     @Override
@@ -55,7 +51,6 @@ import android.widget.TextView;
         Log.d("lifecycle", "onCreate invoked");
         setContentView(R.layout.activity_main);
 
-<<<<<<< HEAD
         //init bluetooth selection spinner
         bluetoothSpinner = (Spinner) findViewById(R.id.bluetooth_spinner);
         spinnerAdapter = new ArrayAdapter<String>(this,
@@ -68,6 +63,56 @@ import android.widget.TextView;
         //request bluetooth access
         bluetoothHelper = new BluetoothHelper();
         requestBluetooth();
+		
+		
+        //VARIABLEN
+
+        TextView hohe = (TextView) findViewById(R.id.hohe_wert);
+        TextView entfernung = (TextView) findViewById(R.id.entf_wert);
+        TextView gang = (TextView) findViewById(R.id.gang_wert);
+
+
+        ProgressBar aussenTemp_bar = (ProgressBar) findViewById(R.id.pbr_Atemp);
+        ProgressBar speed_bar = (ProgressBar) findViewById(R.id.pbr_Spd);
+        ProgressBar rpm_bar = (ProgressBar) findViewById(R.id.pbr_RPM);
+        ProgressBar gas_bar = (ProgressBar) findViewById(R.id.pbr_Gsdrkng);
+        ProgressBar motorTemp_bar = (ProgressBar) findViewById(R.id.pbr_Mtemp);
+        ProgressBar tankFuel_bar = (ProgressBar) findViewById(R.id.pbr_Tnkfllng);
+        ProgressBar auslastung_bar = (ProgressBar) findViewById(R.id.pbr_Auslstng);
+
+        //SPEED
+        //RPM
+        //THROTTLE_POS
+        //COOLANT_TEMP
+        //MAF -> luft flow
+        //TANK
+        //Distance
+        //Time
+        //ENGINE_LOAD
+
+        aussenTemp_bar.setProgress(AMBIENT_TEMP);
+        speed_bar.setProgress(SPEED);
+        rpm_bar.setProgress(RPM);
+        gas_bar.setProgress(0);
+        motorTemp_bar.setProgress(COOLANT_TEMP);
+        tankFuel_bar.setProgress(TANK);
+        auslastung_bar.setProgress(ENGINE_LOAD);
+
+
+        //ENDE VARIABLEN
+
+
+
+        // Settings_Buton
+
+        Button btn_einstellungen = (Button) findViewById(R.id.btn_enstllngn);
+        btn_einstellungen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent settingsIntent = new Intent(MainActivity.this, options.class);
+                startActivity(settingsIntent);
+            }
+        });
     }
 
 
@@ -151,66 +196,7 @@ import android.widget.TextView;
                 bluetoothDevice = null;
             }
         });
-=======
-
-        //VARIABLEN
-
-        TextView hohe = (TextView) findViewById(R.id.hohe_wert);
-        TextView entfernung = (TextView) findViewById(R.id.entf_wert);
-        TextView gang = (TextView) findViewById(R.id.gang_wert);
 
 
-        ProgressBar aussenTemp_bar = (ProgressBar) findViewById(R.id.pbr_Atemp);
-        ProgressBar speed_bar = (ProgressBar) findViewById(R.id.pbr_Spd);
-        ProgressBar rpm_bar = (ProgressBar) findViewById(R.id.pbr_RPM);
-        ProgressBar gas_bar = (ProgressBar) findViewById(R.id.pbr_Gsdrkng);
-        ProgressBar motorTemp_bar = (ProgressBar) findViewById(R.id.pbr_Mtemp);
-        ProgressBar tankFuel_bar = (ProgressBar) findViewById(R.id.pbr_Tnkfllng);
-        ProgressBar auslastung_bar = (ProgressBar) findViewById(R.id.pbr_Auslstng);
-
-
-//
-        //SPEED
-        //RPM
-        //THROTTLE_POS
-        //COOLANT_TEMP
-        //MAF -> luft flow
-        //TANK
-        //Distance
-        //Time
-        //ENGINE_LOAD
-
-        aussenTemp_bar.setProgress(AMBIENT_TEMP);
-        speed_bar.setProgress(SPEED);
-        rpm_bar.setProgress(RPM);
-        gas_bar.setProgress(0);
-        motorTemp_bar.setProgress(COOLANT_TEMP);
-        tankFuel_bar.setProgress(TANK);
-        auslastung_bar.setProgress(ENGINE_LOAD);
-
-
-
-
-        //ENDE VARIABLEN
-
-
-
-        // Settings_Buton
-
-        Button btn_einstellungen = (Button) findViewById(R.id.btn_enstllngn);
-        btn_einstellungen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent settingsIntent = new Intent(MainActivity.this, options.class);
-                startActivity(settingsIntent);
-            }
-        });
-
-
-         // TEST ENDE
-
-
-
->>>>>>> 8ad165af9e4191dc815033dd19290b09cf8722df
     }
 }
