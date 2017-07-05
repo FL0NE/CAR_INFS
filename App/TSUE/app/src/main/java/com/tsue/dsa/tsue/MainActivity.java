@@ -33,9 +33,25 @@ public class MainActivity extends AppCompatActivity {
         ProgressBar auslastung_bar = (ProgressBar) findViewById(R.id.pbr_Auslstng);
 
 
+//
+        //SPEED
+        //RPM
+        //THROTTLE_POS
+        //COOLANT_TEMP
+        //MAF -> luft flow
+        //TANK
+        //Distance
+        //Time
+        //ENGINE_LOAD
 
+        aussenTemp_bar.setProgress(AMBIENT_TEMP);
+        speed_bar.setProgress(SPEED);
+        rpm_bar.setProgress(RPM);
+        gas_bar.setProgress(0);
+        motorTemp_bar.setProgress(COOLANT_TEMP);
+        tankFuel_bar.setProgress(TANK);
+        auslastung_bar.setProgress(ENGINE_LOAD);
 
-        aussenTemp_bar.setProgress(0);
 
 
 
