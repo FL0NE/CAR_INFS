@@ -18,7 +18,8 @@
         app:layout_constraintVertical_bias="0.827"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.087" />
+        app:layout_constraintHorizontal_bias="0.087"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/txt_Entfrng"
@@ -29,7 +30,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.832" />
+        app:layout_constraintVertical_bias="0.832"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/txt_Gngschltng"
@@ -41,7 +43,8 @@
         app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/pbr_Tnkfllng"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintVertical_bias="0.653"
+        android:textStyle="bold"/>
 
     <ProgressBar
         android:id="@+id/pbr_Atemp"
@@ -137,7 +140,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintVertical_bias="0.888"
+        />
 
     <TextView
         android:id="@+id/entf_wert"
@@ -149,7 +153,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintVertical_bias="0.888"
+        />
 
     <TextView
         android:id="@+id/gang_wert"
@@ -173,7 +178,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.232" />
+        app:layout_constraintVertical_bias="0.232"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/txt_RPM"
@@ -185,7 +191,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.338" />
+        app:layout_constraintVertical_bias="0.338"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/txt_Gsdrkng"
@@ -197,7 +204,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.435" />
+        app:layout_constraintVertical_bias="0.435"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/txt_Tnkfllng"
@@ -209,7 +217,8 @@
         app:layout_constraintHorizontal_bias="0.051"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.625"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/txt_Auslstng"
@@ -221,7 +230,8 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.724" />
+        app:layout_constraintVertical_bias="0.724"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/txt_Atemp"
@@ -233,7 +243,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145" />
+        app:layout_constraintVertical_bias="0.145"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/txt_Mtemp"
@@ -245,6 +256,7 @@
         app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.536" />
+        app:layout_constraintVertical_bias="0.536"
+        android:textStyle="bold"/>
 
 </android.support.constraint.ConstraintLayout>
