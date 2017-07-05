@@ -64,8 +64,8 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintVertical_bias="0.129" />
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintVertical_bias="0.125" />
 
     <ProgressBar
         android:id="@+id/pbr_Spd"
@@ -74,10 +74,10 @@
         android:layout_height="40dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.233" />
+        app:layout_constraintVertical_bias="0.229" />
 
     <ProgressBar
         android:id="@+id/pbr_RPM"
@@ -86,10 +86,10 @@
         android:layout_height="40dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintVertical_bias="0.335" />
 
     <ProgressBar
         android:id="@+id/pbr_Gsdrkng"
@@ -98,10 +98,10 @@
         android:layout_height="40dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.435" />
 
     <ProgressBar
         android:id="@+id/pbr_Mtemp"
@@ -113,7 +113,7 @@
         app:layout_constraintVertical_bias="0.641"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintHorizontal_bias="0.65" />
 
     <ProgressBar
         android:id="@+id/pbr_Tnkfllng"
@@ -124,7 +124,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintVertical_bias="0.539" />
 
     <ProgressBar
@@ -136,7 +136,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintVertical_bias="0.74" />
 
     <TextView
@@ -156,7 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="-660dp"
+        tools:layout_editor_absoluteX="-652dp"
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
@@ -243,16 +243,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tankfüllung"
-        tools:layout_editor_absoluteY="312dp"
-        tools:layout_editor_absoluteX="15dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.625" />
 
     <TextView
         android:id="@+id/txt_Auslstng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Auslastung"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="364dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.082"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.724" />
 
     <TextView
         android:id="@+id/txt_Atemp"
