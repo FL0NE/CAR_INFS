@@ -30,7 +30,7 @@
         android:textSize="16sp"
         android:textStyle="normal"
         tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="138dp" />
+        tools:layout_editor_absoluteY="141dp" />
 
     <TextView
         android:id="@+id/txt_wllkmmn"
