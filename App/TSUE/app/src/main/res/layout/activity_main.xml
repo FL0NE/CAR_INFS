@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="luca.swettbewerb.MainActivity"
     tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp" android:background="#EDEDED">
 
     <TextView
         android:id="@+id/txt_hmssr"
@@ -32,11 +32,4 @@
         tools:layout_editor_absoluteX="258dp"
         tools:layout_editor_absoluteY="409dp" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="479dp"
-        android:layout_height="396dp"
-        app:srcCompat="@android:drawable/progress_horizontal"
-        tools:layout_editor_absoluteY="-13dp"
-        tools:layout_editor_absoluteX="4dp" />
 </android.support.constraint.ConstraintLayout>
