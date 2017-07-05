@@ -13,117 +13,269 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Höhenmesser"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="409dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.827"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.087" />
 
     <TextView
         android:id="@+id/txt_Entfrng"
         android:layout_width="80dp"
         android:layout_height="20dp"
         android:text="Entfernung"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="409dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.826" />
 
     <TextView
         android:id="@+id/txt_Gngschltng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gang"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="409dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/pbr_Tnkfllng"
+        app:layout_constraintVertical_bias="0.653" />
 
     <Button
         android:id="@+id/btn_enstllngn"
         android:layout_width="135dp"
-        android:layout_height="37dp"
+        android:layout_height="48dp"
         android:text="Einstellungen"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="3dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
 
     <ProgressBar
         android:id="@+id/pbr_Atemp"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="161dp"
         android:layout_height="40dp"
-        tools:layout_editor_absoluteY="49dp"
-        tools:layout_editor_absoluteX="112dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintVertical_bias="0.129" />
 
     <ProgressBar
         android:id="@+id/pbr_Spd"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="161dp"
         android:layout_height="40dp"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="97dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.233" />
 
     <ProgressBar
         android:id="@+id/pbr_RPM"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="161dp"
         android:layout_height="40dp"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="144dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.337" />
 
     <ProgressBar
         android:id="@+id/pbr_Gsdrkng"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="161dp"
         android:layout_height="40dp"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="192dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.437" />
 
     <ProgressBar
         android:id="@+id/pbr_Mtemp"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="161dp"
         android:layout_height="40dp"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="244dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.641"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.502" />
 
     <ProgressBar
         android:id="@+id/pbr_Tnkfllng"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="161dp"
         android:layout_height="40dp"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="297dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintVertical_bias="0.539" />
 
     <ProgressBar
         android:id="@+id/pbr_Auslstng"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="161dp"
         android:layout_height="40dp"
-        tools:layout_editor_absoluteX="112dp"
-        tools:layout_editor_absoluteY="350dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintVertical_bias="0.74" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="43dp"
-        tools:layout_editor_absoluteY="439dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.888"
+        app:layout_constraintHorizontal_bias="0.11" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="TextView"
+        tools:layout_editor_absoluteX="-660dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="157dp"
-        tools:layout_editor_absoluteY="439dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.888"
+        app:layout_constraintHorizontal_bias="0.466" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        tools:layout_editor_absoluteX="258dp"
-        tools:layout_editor_absoluteY="439dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.8" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="731dp"
+        tools:layout_editor_absoluteY="567dp" />
+
+    <TextView
+        android:id="@+id/txt_Spd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Geschwindigkeit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.242" />
+
+    <TextView
+        android:id="@+id/txt_RPM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Umdrehungen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.338" />
+
+    <TextView
+        android:id="@+id/txt_Gsdrkng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gasdrückung"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.435" />
+
+    <TextView
+        android:id="@+id/txt_Mtemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Motortemperatur"
+        app:layout_constraintHorizontal_bias="0.481"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/pbr_Mtemp"
+        app:layout_constraintVertical_bias="0.555"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/txt_Tnkfllng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tankfüllung"
+        tools:layout_editor_absoluteY="312dp"
+        tools:layout_editor_absoluteX="15dp" />
+
+    <TextView
+        android:id="@+id/txt_Auslstng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Auslastung"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="364dp" />
+
+    <TextView
+        android:id="@+id/txt_Atemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Außentempreatur"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.007"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.145" />
+
+    <TextView
+        android:id="@+id/txt_Mtemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Motortemperatur"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.536" />
 
 </android.support.constraint.ConstraintLayout>
