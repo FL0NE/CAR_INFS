@@ -140,7 +140,7 @@
         app:layout_constraintVertical_bias="0.74" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/hohe_wert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="n.A."
@@ -160,19 +160,19 @@
         tools:layout_editor_absoluteY="16dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/entf_wert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="n.A."
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
+        app:layout_constraintHorizontal_bias="0.467"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.888" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/gang_wert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="n.A."
