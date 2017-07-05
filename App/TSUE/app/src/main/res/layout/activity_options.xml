@@ -7,47 +7,47 @@
     tools:context="com.tsue.dsa.tsue.options">
 
     <TextView
-        android:id="@+id/ueberschrift"
+        android:id="@+id/txt_Enstllngn"
         android:layout_width="245dp"
         android:layout_height="63dp"
         android:text="Einstellungen"
+        android:textSize="@dimen/einstellungen_Size"
         tools:layout_editor_absoluteX="39dp"
-        tools:layout_editor_absoluteY="-5dp"
-        android:textSize="@dimen/einstellungen_Size"/>
+        tools:layout_editor_absoluteY="-5dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/num_Mtemp"
         android:layout_width="50dp"
         android:layout_height="36dp"
         android:ems="10"
         android:inputType="number"
         tools:layout_editor_absoluteX="26dp"
-        tools:layout_editor_absoluteY="99dp" />
+        tools:layout_editor_absoluteY="135dp" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/num_Atemp"
         android:layout_width="50dp"
         android:layout_height="36dp"
         android:ems="10"
         android:inputType="number"
         tools:layout_editor_absoluteX="102dp"
-        tools:layout_editor_absoluteY="99dp" />
+        tools:layout_editor_absoluteY="135dp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/num_Alastung"
         android:layout_width="50dp"
         android:layout_height="36dp"
         android:ems="10"
         android:inputType="number"
         tools:layout_editor_absoluteX="184dp"
-        tools:layout_editor_absoluteY="99dp" />
+        tools:layout_editor_absoluteY="135dp" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/num_Benzin"
         android:layout_width="50dp"
         android:layout_height="36dp"
         android:ems="10"
         android:inputType="number"
-        tools:layout_editor_absoluteX="270dp"
-        tools:layout_editor_absoluteY="99dp" />
+        tools:layout_editor_absoluteX="266dp"
+        tools:layout_editor_absoluteY="135dp" />
 </android.support.constraint.ConstraintLayout>
