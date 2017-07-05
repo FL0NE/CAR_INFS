@@ -16,6 +16,8 @@ public enum ModeOptions {
     AMBIENT_TEMP("46"),
     ENGINE_LOAD("04");
 
+
+
     private String value;
 
     private ModeOptions(String value) {

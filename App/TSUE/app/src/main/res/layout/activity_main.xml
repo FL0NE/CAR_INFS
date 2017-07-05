@@ -239,7 +239,7 @@
         android:id="@+id/txt_Atemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Außentempreatur"
+        android:text="Außentemperatur"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintLeft_toLeftOf="parent"
