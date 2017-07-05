@@ -32,4 +32,69 @@
         tools:layout_editor_absoluteX="258dp"
         tools:layout_editor_absoluteY="409dp" />
 
+    <Button
+        android:id="@+id/btn_enstllngn"
+        android:layout_width="78dp"
+        android:layout_height="37dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="3dp" />
+
+    <ProgressBar
+        android:id="@+id/pbr_Atemp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="161dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="97dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:layout_editor_absoluteY="68dp" />
+
+    <ProgressBar
+        android:id="@+id/pbr_Spd"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="126dp" />
+
+    <ProgressBar
+        android:id="@+id/pbr_RPM"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="184dp" />
+
+    <ProgressBar
+        android:id="@+id/pbr_Gsdrkng"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="230dp" />
+
+    <ProgressBar
+        android:id="@+id/pbr_Mtemp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="279dp" />
+
+    <ProgressBar
+        android:id="@+id/pbr_Tnkfllng"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="324dp" />
+
+    <ProgressBar
+        android:id="@+id/pbr_Auslstng"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="157dp"
+        tools:layout_editor_absoluteY="371dp" />
+
 </android.support.constraint.ConstraintLayout>
