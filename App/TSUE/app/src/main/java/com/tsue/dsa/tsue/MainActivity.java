@@ -9,21 +9,24 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    //VARIABLEN
-
-    TextView hohe = (TextView) findViewById(R.id.hohe_wert);
-    TextView entfernung = (TextView) findViewById(R.id.entf_wert);
-    TextView gang = (TextView) findViewById(R.id.gang_wert);
-
-
-
-    //ENDE VARIABLEN
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        //VARIABLEN
+
+        TextView hohe = (TextView) findViewById(R.id.hohe_wert);
+        TextView entfernung = (TextView) findViewById(R.id.entf_wert);
+        TextView gang = (TextView) findViewById(R.id.gang_wert);
+
+
+
+        //ENDE VARIABLEN
+
+
 
         // Settings_Buton
 
