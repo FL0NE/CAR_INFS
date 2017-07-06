@@ -11,7 +11,7 @@ import com.github.pires.obd.enums.ObdProtocols;
 
 import java.io.IOException;
 
-import de.dsa.goit.odbviewer.utils.BluetoothHelper;
+import com.tsue.dsa.tsue.utils.BluetoothHelper;
 
 /**
  * The {@link PeriodicOBDConnector} opens a Bluetooth Socket once. Then it configures the OBD connection.
@@ -23,11 +23,11 @@ public class PeriodicOBDConnector extends Thread {
 
     private BluetoothDevice device;
     private BluetoothSocket socket = null;
-    private de.dsa.goit.odbviewer.obd.OBDConnector obdConnector;
+    private com.tsue.dsa.tsue.obd.OBDConnector obdConnector;
     private boolean run = true;
     private Integer periods = null;
     private long sleep;
-    private de.dsa.goit.odbviewer.obd.MyOBDCommand[] commands;
+    private com.tsue.dsa.tsue.obd.MyOBDCommand[] commands;
 
     /**
      * Constrcutor
@@ -69,7 +69,7 @@ public class PeriodicOBDConnector extends Thread {
             }
 
             if(socket!=null){
-                obdConnector = new de.dsa.goit.odbviewer.obd.OBDConnector(socket);
+                obdConnector = new com.tsue.dsa.tsue.obd.OBDConnector(socket);
                 obdConnector.execute(commands);
             }
 
