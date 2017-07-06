@@ -26,7 +26,7 @@ public class StartActivity extends Activity {
     private Spinner bluetoothDeviceSpinner;
     private BluetoothDevice currentSelectedDevice;
     private List<String> listItems = new ArrayList<String>();
-    private ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>()
+    private ArrayAdapter<String> spinnerAdapter;
     private BluetoothHelper bluetoothHelper;
 
     @Override
@@ -43,17 +43,27 @@ public class StartActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == BluetoothHelper.REQUEST_ENABLE_BT && resultCode == RESULT_OK) {
             bluetoothHelper.initBluetooth();
-            spinnerAdapter(spinnerAdapter);
+            updateAdapter(spinnerAdapter);
         } else if (requestCode == BluetoothHelper.REQUEST_ENABLE_BT) {
             Toast toast = Toast.makeText(this, "Need bluetooth to work!", Toast.LENGTH_LONG);
             toast.show();
             requestBluetooth();
         }
     }
+    private void requestBluetooth() {
+        if (bluetoothHelper.requestBluetooth(this)) {
+            updateAdapter(spinnerAdapter);
+        }
+    }
+    private void updateAdapter(ArrayAdapter adapter) {
+        adapter.clear();
+        adapter.addAll(bluetoothHelper.getPairedDeviceNames());
+        adapter.notifyDataSetChanged();
+    }
 
     private void initAdapter() {
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listItems);
-        bluetoothDeviceSpinner.setAdapter(arrayAdapter);
+        spinnerAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listItems);
+        bluetoothDeviceSpinner.setAdapter(spinnerAdapter);
     }
 
     private void initListener() {
