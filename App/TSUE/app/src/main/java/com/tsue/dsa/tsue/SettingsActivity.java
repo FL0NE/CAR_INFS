@@ -14,6 +14,8 @@ import com.tsue.dsa.tsue.utils.OBDComandHandler;
 
 import java.util.ArrayList;
 
+import de.dsa.goit.odbviewer.R;
+
 /**
  * Created by dsa on 06.07.2017.
  */
@@ -22,7 +24,6 @@ public class SettingsActivity extends Activity {
     private Spinner bluetoothSpinner;
     private ArrayAdapter<String> spinnerAdapter;
     private ArrayList<String> listItems = new ArrayList<String>();
-    private Spinner bluetoothSpinner;
     private BluetoothHelper bluetoothHelper;
     private OBDComandHandler commandHandler;
     private BluetoothDevice bluetoothDevice;
