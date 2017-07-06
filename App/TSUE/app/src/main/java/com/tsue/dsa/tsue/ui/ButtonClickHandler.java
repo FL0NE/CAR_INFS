@@ -23,7 +23,7 @@ import com.tsue.dsa.tsue.obd.PeriodicOBDConnector;
 
 public class ButtonClickHandler {
     private Activity activity;
-    private int[] buttonIDs = {R.id.enginetempButton, R.id.airflowButton, R.id.speedButton, R.id.positionButton, R.id.rpmButton};
+    private int[] buttonIDs = {}; //R.id.enginetempButton, R.id.airflowButton, R.id.speedButton, R.id.positionButton, R.id.rpmButton
     private String textOfSelectedButton = "Stop";
     private int idOfSelectedButton = -1;
     private BluetoothDevice bluetoothDevice = null;
@@ -49,7 +49,7 @@ public class ButtonClickHandler {
 
     /**
      * Creates a {@link MyOBDCommand} with the getCommandForButton method. For all buttons, which IDs are in the buttonIDs Array.
-     * @param button the button which was clicked.
+     * @param //button the button which was clicked.
      */
     public void updateAllValues(View button) {
         List<MyOBDCommand> commands = new ArrayList<>();
@@ -69,6 +69,7 @@ public class ButtonClickHandler {
     private  MyOBDCommand getCommandForButton(int buttonID) {
         MyOBDCommand com = null;
         TextView component;
+        /*
         switch (buttonID) {
             case R.id.speedButton:
                 component = ((TextView) activity.findViewById(R.id.speedDisplay));
@@ -91,7 +92,7 @@ public class ButtonClickHandler {
                 com = new MyOBDCommand(Modes.SHOW_CURRENT_DATA, ModeOptions.MAF, 2.568, component);
                 break;
             default:
-        }
+        } */
         return com;
     }
 
@@ -149,7 +150,7 @@ public class ButtonClickHandler {
         for (int id : buttonIDs) {
             activity.findViewById(id).setEnabled(enable);
         }
-        activity.findViewById(R.id.updateAllButton).setEnabled(enable);
+      //  activity.findViewById(R.id.updateAllButton).setEnabled(enable);
     }
 
     public void setBluetoothDevice(BluetoothDevice bluetoothDevice) {

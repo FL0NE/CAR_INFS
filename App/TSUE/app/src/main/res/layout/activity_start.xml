@@ -15,22 +15,23 @@
         tools:layout_editor_absoluteY="382dp" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/bluetooth_spinner_startscreen"
         android:layout_width="368dp"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="325dp" />
+        tools:layout_editor_absoluteY="188dp" />
 
     <TextView
         android:id="@+id/txt_Grtauswhln"
-        android:layout_width="159dp"
-        android:layout_height="84dp"
+        android:layout_width="192dp"
+        android:layout_height="36dp"
+        android:gravity="center"
         android:text="Bitte wählen Sie Ihr Gerät aus!"
-        android:textScaleX="15"
-        android:textSize="16dp"
+        android:textScaleX="1"
+        android:textSize="14sp"
         android:textStyle="normal"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="141dp" />
+        tools:layout_editor_absoluteX="96dp"
+        tools:layout_editor_absoluteY="138dp" />
 
     <TextView
         android:id="@+id/txt_wllkmmn"
