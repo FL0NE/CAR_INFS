@@ -102,7 +102,7 @@ public class MyOBDCommand extends ObdCommand {
                 currentValue = value.getValue();
             }
         }
-        return (finalResult / currentValue) * 100;
+        return (int) ((finalResult / currentValue) * 100);
     }
 
     @Override
@@ -115,7 +115,7 @@ public class MyOBDCommand extends ObdCommand {
      */
     public void updateUI() {
         textViewUpdate.setText(getCalculatedResult());
-        if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
+        if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
             progressbarUpdate.setProgress(getCalculatedPercentage());
         }
     }
