@@ -71,6 +71,13 @@ public class MainActivity extends Activity {
         TextView entfernung = (TextView) findViewById(R.id.entf_wert);
         TextView gang = (TextView) findViewById(R.id.gang_wert);
 
+        /*
+
+        hohe.setText(HEIGHT);
+        entfernung.setText(DISTANCE);
+        gang.setText(THROTTLE_POS);
+
+        */
 
         ProgressBar aussenTemp_bar = (ProgressBar) findViewById(R.id.pbr_Atemp);
         ProgressBar speed_bar = (ProgressBar) findViewById(R.id.pbr_Spd);
@@ -89,6 +96,20 @@ public class MainActivity extends Activity {
         //Distance
         //Time
         //ENGINE_LOAD
+/*
+
+        int maxAussenTemp = 40;
+        int aussenTemp = (AMBIENT_TEMP / maxAussenTemp)*100;
+
+        int maxSpeed = 200;
+        int speed_prozent = (SPEED / maxSpeed) * 100;
+
+        int rpm_max = 0;
+        int rpm_prozent = (RPM / rpm_max) * 100;
+
+        int maxMotor = 0;
+
+
 
         aussenTemp_bar.setProgress(AMBIENT_TEMP);
         speed_bar.setProgress(SPEED);
@@ -98,7 +119,7 @@ public class MainActivity extends Activity {
         tankFuel_bar.setProgress(TANK);
         auslastung_bar.setProgress(ENGINE_LOAD);
 
-
+*/
         //ENDE VARIABLEN
 
 
