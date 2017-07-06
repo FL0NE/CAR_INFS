@@ -58,15 +58,6 @@ public class MainActivity extends Activity {
 
 
 
-        //TEST START
-
-        int a = 12;
-
-        Intent xax = new Intent(null);
-        xax.putExtra("abc", a);
-
-
-        //TEST ENDE
 
 
 

@@ -33,14 +33,16 @@ public class ButtonClickHandler {
 
     /**
      * Constructor
+     *
      * @param activity the active activity. Needed to find and update UI elements.
      */
-    public ButtonClickHandler(Activity activity){
+    public ButtonClickHandler(Activity activity) {
         this.activity = activity;
     }
 
     /**
      * Creates a {@link MyOBDCommand} with the getCommandForButton method. For the clicked button.
+     *
      * @param button the button, which ID will be used.
      */
     public void updateUI(View button) {
@@ -50,6 +52,7 @@ public class ButtonClickHandler {
 
     /**
      * Creates a {@link MyOBDCommand} with the getCommandForButton method. For all buttons, which IDs are in the buttonIDs Array.
+     *
      * @param //button the button which was clicked.
      */
     public void updateAllValues(View button) {
@@ -64,14 +67,17 @@ public class ButtonClickHandler {
 
     /**
      * Creates a OBDCommand based on the given button id.
-     * @param buttonID The ID of the Button for which you want to generate the {@link MyOBDCommand}
+     *
+     * @param //buttonID The ID of the Button for which you want to generate the {@link MyOBDCommand}
      * @return the generated {@link MyOBDCommand}, can be null
      */
-    private MyOBDCommand getCommand(ModeOptions option,double multiplicator,int id) {
+    private MyOBDCommand getCommand(ModeOptions option, double multiplicator, int id) {
         ProgressBar progressBar;
-        MyOBDCommand command = new MyOBDCommand(Modes.SHOW_CURRENT_DATA,option,multiplicator,progressBar);
+        MyOBDCommand command = new MyOBDCommand(Modes.SHOW_CURRENT_DATA, option, multiplicator, null);
+        return null;
     }
-    private  MyOBDCommand getCommandForButton(int buttonID) {
+
+    private MyOBDCommand getCommandForButton(int buttonID) {
         MyOBDCommand com = null;
         TextView component;
         /*
@@ -104,6 +110,7 @@ public class ButtonClickHandler {
     /**
      * Resets the button to enable, if the pressed button was the button, that was pressed last.
      * Otherwise all buttons, without the pressed one, will be disabled. The text of the pressed button will change to "Stop". Then the {@link PeriodicOBDConnector} will be created and executed.
+     *
      * @param button
      * @param commands
      */
@@ -149,13 +156,14 @@ public class ButtonClickHandler {
 
     /**
      * calls the setEnable method for each of the buttons, which IDs are oin the buttonID array.
+     *
      * @param enable the value, that will be set to all buttons
      */
     private void setEnableOfAllButtons(boolean enable) {
         for (int id : buttonIDs) {
             activity.findViewById(id).setEnabled(enable);
         }
-      //  activity.findViewById(R.id.updateAllButton).setEnabled(enable);
+        //  activity.findViewById(R.id.updateAllButton).setEnabled(enable);
     }
 
     public void setBluetoothDevice(BluetoothDevice bluetoothDevice) {
