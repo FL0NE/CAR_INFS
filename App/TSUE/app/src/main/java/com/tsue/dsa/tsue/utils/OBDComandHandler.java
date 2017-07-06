@@ -35,6 +35,7 @@ public class OBDComandHandler {
     private final ProgressBar coolantTempProgressBar;
     private final ProgressBar tankProgressBar;
     private final ProgressBar engineLoadProgressBar;
+    private final ProgressBar throttleProgressBar;
     private int idOfSelectedButton;
 
     private TextView rpmTextView;
@@ -44,9 +45,11 @@ public class OBDComandHandler {
 
     public OBDComandHandler(Activity activity) {
         this.activity = activity;
+
+        this.rpmTextView = (TextView) activity.findViewById(R.id.txt_RPM);
         this.rpmTextView = (TextView) activity.findViewById(R.id.rpm_wert);
         this.speedTextView = (TextView) activity.findViewById(R.id.kmh_wert);
-        this.throttlePosTextView = (TextView) activity.findViewById(R.id.gang_wert);
+        this.throttlePosTextView = (TextView) activity.findViewById(R.id.txt_Gsdrkng);
         this.coolantTempTextView = (TextView) activity.findViewById(R.id.txt_Mtemp);
         this.tankTextView = (TextView) activity.findViewById(R.id.txt_Tnkfllng);
         this.distanceTextView = (TextView) activity.findViewById(R.id.txt_Entfrng);
@@ -54,6 +57,7 @@ public class OBDComandHandler {
         this.ambientTempTextView = (TextView) activity.findViewById(R.id.txt_Atemp);
         this.engineLoadTextView = (TextView) activity.findViewById(R.id.txt_Alastung);
 
+        this.throttleProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_gas);
         this.speedProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_Spd);
         this.rpmProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_RPM);
         this.coolantTempProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_Mtemp);
