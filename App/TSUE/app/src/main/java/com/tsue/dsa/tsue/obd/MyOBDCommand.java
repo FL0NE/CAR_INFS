@@ -1,12 +1,18 @@
 package com.tsue.dsa.tsue.obd;
 
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
+import com.tsue.dsa.tsue.MainActivity;
+import com.tsue.dsa.tsue.model.ModeOptionValues;
 import com.tsue.dsa.tsue.model.ModeOptions;
 import com.tsue.dsa.tsue.model.Modes;
 import com.tsue.dsa.tsue.model.Unit;
+
+import java.util.stream.Stream;
 
 /**
  * MyOBDCommand is a OBDCommand.
@@ -14,11 +20,13 @@ import com.tsue.dsa.tsue.model.Unit;
  * Created by abr
  */
 
-public class MyOBDCommand extends ObdCommand{
+public class MyOBDCommand extends ObdCommand {
+    private final ProgressBar progressbarUpdate;
     private String result = "";
     private double modifier = 0.0;
-    private TextView viewToUpdate;
-    Unit unit =null;
+    private TextView textViewUpdate;
+    private ModeOptions option;
+    Unit unit = null;
 
 //    /**
 //     * Constructs a OBDCommand.
@@ -30,13 +38,20 @@ public class MyOBDCommand extends ObdCommand{
 
     /**
      * Constructs a OBDCommand.
-     * @param mode the Mode of the request
+     *
+     * @param mode   the Mode of the request
      * @param option the mode option of the request
      */
-    public MyOBDCommand(Modes mode, ModeOptions option, double modifier, TextView viewToUpdate) {
-        super((mode.getValue())+" "+ option.getValue());
+    public MyOBDCommand(Modes mode, ModeOptions option, double modifier, TextView textViewUpdate, ProgressBar progressbarUpdate) {
+        super((mode.getValue()) + " " + option.getValue());
         this.modifier = modifier;
-        this.viewToUpdate=viewToUpdate;
+        this.textViewUpdate = textViewUpdate;
+        this.option = option;
+        this.progressbarUpdate = progressbarUpdate;
+    }
+
+    public MyOBDCommand(Modes mode, ModeOptions option, double modifier, TextView textView) {
+        this(mode, option, modifier, textView, null);
     }
 
 //    /**
@@ -57,22 +72,37 @@ public class MyOBDCommand extends ObdCommand{
 
     @Override
     public String getFormattedResult() {
-        if(unit != null){
-            return result +" " + unit.getSymbol();
+        if (unit != null) {
+            return result + " " + unit.getSymbol();
         }
         return result;
     }
 
     @Override
     public String getCalculatedResult() {
-        if(modifier!=0.0){
-            try{
-                return ""+Integer.valueOf(result)*modifier;
-            }catch(NumberFormatException nfe){
+        if (modifier != 0.0) {
+            try {
+                return "" + Integer.valueOf(result) * modifier;
+            } catch (NumberFormatException nfe) {
                 return result;
             }
         }
         return result;
+    }
+
+    private int getCalculatedPercentage() {
+        int finalResult = 0;
+        if (modifier != 0.0) {
+            int integer = Integer.valueOf(result);
+            finalResult = integer * (int) modifier;
+        }
+        Integer currentValue = 0;
+        for (ModeOptionValues value : ModeOptionValues.values()) {
+            if (value.getOption() == option) {
+                currentValue = value.getValue();
+            }
+        }
+        return (finalResult / currentValue) * 100;
     }
 
     @Override
@@ -83,7 +113,10 @@ public class MyOBDCommand extends ObdCommand{
     /**
      * Sets the return value of the getCalculatedResult to the text view, given in the constructor.
      */
-    public void updateUI(){
-        viewToUpdate.setText(getCalculatedResult());
+    public void updateUI() {
+        textViewUpdate.setText(getCalculatedResult());
+        if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
+            progressbarUpdate.setProgress(getCalculatedPercentage());
+        }
     }
 }
