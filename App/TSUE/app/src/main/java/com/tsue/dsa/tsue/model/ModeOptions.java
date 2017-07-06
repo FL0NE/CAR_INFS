@@ -11,7 +11,7 @@ public enum ModeOptions {
     COOLANT_TEMP("05"),
     MAF("10"),
     TANK("03"),
-    Distance("31"),
+    DISTANCE("31"),
     TIME("4E"),
     AMBIENT_TEMP("46"),
     ENGINE_LOAD("04");
