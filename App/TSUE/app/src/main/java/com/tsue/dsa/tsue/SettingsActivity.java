@@ -2,12 +2,15 @@ package com.tsue.dsa.tsue;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Switch;
 
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
@@ -27,18 +30,24 @@ public class SettingsActivity extends Activity {
     private OBDComandHandler commandHandler;
     private BluetoothDevice bluetoothDevice;
 
+    private EditText benzin;
+    private EditText engineLoad;
+    private EditText engineTemp;
+    private EditText speed;
+    private Switch soundSwitch;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("lifecycle", "onCreate invoked");
         setContentView(R.layout.activity_options);
-
-        bluetoothSpinner = (Spinner) findViewById(R.id.bluetooth_spinner);
-        spinnerAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, listItems);
-        bluetoothSpinner.setAdapter(spinnerAdapter);
-        addBluetoothSpinnerListener();
+        benzin = (EditText) findViewById(R.id.num_benzin);
+        engineLoad = (EditText) findViewById(R.id.editText);
+        engineTemp = (EditText) findViewById(R.id.num_Mtemp);
+        speed = (EditText) findViewById(R.id.num_maxSpeed);
+        soundSwitch = (Switch) findViewById(R.id.sound_switch);
     }
+
     private void addBluetoothSpinnerListener() {
         bluetoothSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -55,6 +64,17 @@ public class SettingsActivity extends Activity {
             }
         });
 
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Setting setting = new Setting();
+        setting.setFuel(benzin.getText().toString());
+        setting.setEngineLoad(engineLoad.getText().toString());
+        setting.setEngineTemp(engineTemp.getText().toString());
+        setting.setSpeed(speed.getText().toString());
+        setting.setEnableSound(soundSwitch.isEnabled());
+        SettingsManager.setSetting(setting);
     }
 }

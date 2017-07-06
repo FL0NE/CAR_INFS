@@ -1,8 +1,13 @@
 package com.tsue.dsa.tsue.obd;
+
+import android.util.Log;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
+import com.tsue.dsa.tsue.Setting;
+import com.tsue.dsa.tsue.SettingsManager;
 import com.tsue.dsa.tsue.model.ModeOptionValues;
 import com.tsue.dsa.tsue.model.ModeOptions;
 import com.tsue.dsa.tsue.model.Modes;
@@ -118,6 +123,8 @@ public class MyOBDCommand extends ObdCommand {
             if (value == null || value.equals("") || value.isEmpty() || textViewUpdate == null) {
                 return;
             }
+            Setting setting = SettingsManager.getSetting();
+            Log.i("info", "fuel -> " + setting.getFuel());
             textViewUpdate.setText(value);
             if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
                 progressbarUpdate.setProgress(getCalculatedPercentage());

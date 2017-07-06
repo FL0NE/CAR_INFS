@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
         btn_einstellungen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent settingsIntent = new Intent(MainActivity.this, options.class);
+                Intent settingsIntent = new Intent(MainActivity.this, SettingsActivity.class);
                 startActivity(settingsIntent);
             }
         });
