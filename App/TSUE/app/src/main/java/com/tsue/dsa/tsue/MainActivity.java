@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import com.tsue.dsa.tsue.ui.ButtonClickHandler;
+//import com.tsue.dsa.tsue.ui.ButtonClickHandler;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
 
@@ -186,7 +186,7 @@ public class MainActivity extends Activity {
 
     /**
      * Adds a {@link android.widget.AdapterView.OnItemSelectedListener} to the bluetooth spinner.
-     * The {@link android.widget.AdapterView.OnItemSelectedListener} will update the the bluetoothDevice and the {@link ButtonClickHandler}, whenever a item in the spinner was selected/deselected.
+     * The {@link android.widget.AdapterView.OnItemSelectedListener} will update the the bluetoothDevice and the {@link //ButtonClickHandler}, whenever a item in the spinner was selected/deselected.
      */
     private void addBluetoothSpinnerListener() {
         bluetoothSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
