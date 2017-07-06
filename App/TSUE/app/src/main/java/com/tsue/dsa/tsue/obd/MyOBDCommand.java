@@ -1,18 +1,12 @@
 package com.tsue.dsa.tsue.obd;
-
-import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
-import com.tsue.dsa.tsue.MainActivity;
 import com.tsue.dsa.tsue.model.ModeOptionValues;
 import com.tsue.dsa.tsue.model.ModeOptions;
 import com.tsue.dsa.tsue.model.Modes;
 import com.tsue.dsa.tsue.model.Unit;
-
-import java.util.stream.Stream;
 
 /**
  * MyOBDCommand is a OBDCommand.
@@ -82,7 +76,7 @@ public class MyOBDCommand extends ObdCommand {
     public String getCalculatedResult() {
         if (modifier != 0.0) {
             try {
-                return "" + Integer.valueOf(result) * modifier;
+                return "" + (int) Math.round(Integer.valueOf(result) * modifier);
             } catch (NumberFormatException nfe) {
                 return result;
             }
@@ -91,18 +85,18 @@ public class MyOBDCommand extends ObdCommand {
     }
 
     private int getCalculatedPercentage() {
-        int finalResult = 0;
+        double finalResult = 0;
         if (modifier != 0.0) {
             int integer = Integer.valueOf(result);
             finalResult = integer * (int) modifier;
         }
-        Integer currentValue = 0;
+        Integer currentValue = 1;
         for (ModeOptionValues value : ModeOptionValues.values()) {
             if (value.getOption() == option) {
                 currentValue = value.getValue();
             }
         }
-        return (finalResult / currentValue) * 100;
+        return (int) ((finalResult / currentValue) * 100);
     }
 
     @Override
@@ -114,9 +108,18 @@ public class MyOBDCommand extends ObdCommand {
      * Sets the return value of the getCalculatedResult to the text view, given in the constructor.
      */
     public void updateUI() {
-        textViewUpdate.setText(getCalculatedResult());
-        if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
-            progressbarUpdate.setProgress(getCalculatedPercentage());
+        String value = getCalculatedResult();
+        try {
+            if (value == null || value.equals("") || value.isEmpty() || textViewUpdate == null) {
+                return;
+            }
+            textViewUpdate.setText(value);
+            if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
+                progressbarUpdate.setProgress(getCalculatedPercentage());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
     }
 }
