@@ -8,19 +8,12 @@ import android.content.SharedPreferences;
 
 public class SettingsManager {
 
+    private static Setting setting;
 
-    public void saveSettings(Setting setting, SharedPreferences preferences) {
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt("maxTemp", setting.getMaxTemp());
-        editor.putInt("minTemp", setting.getMinTemp());
-        editor.apply();
+    public static void setSetting(Setting setting1) {
+        setting = setting1;
     }
-
-    public Setting getSettings(SharedPreferences preferences) {
-        Setting result = new Setting();
-
-        result.setMaxTemp(preferences.getInt("maxTemp", 1));
-        result.setMinTemp(preferences.getInt("minTemp", 1));
-        return result;
+    public static Setting getSetting() {
+        return setting;
     }
 }

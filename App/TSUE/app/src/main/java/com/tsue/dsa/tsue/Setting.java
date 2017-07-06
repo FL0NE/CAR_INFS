@@ -5,22 +5,49 @@ package com.tsue.dsa.tsue;
  */
 
 public class Setting {
-    private Integer maxTemp;
-    private Integer minTemp;
+    private float fuel;
+    private float engineLoad;
+    private float engineTemp;
+    private float speed;
+    private boolean enableSound;
 
-    public Integer getMaxTemp() {
-        return maxTemp;
+    public float getEngineTemp() {
+        return engineTemp;
     }
 
-    public Integer getMinTemp() {
-        return minTemp;
+    public void setEngineTemp(float engineTemp) {
+        this.engineTemp = engineTemp;
     }
 
-    public void setMaxTemp(Integer maxTemp) {
-        this.maxTemp = maxTemp;
+    public float getFuel() {
+        return fuel;
     }
 
-    public void setMinTemp(Integer minTemp) {
-        this.minTemp = minTemp;
+    public void setFuel(float fuel) {
+        this.fuel = fuel;
+    }
+
+    public float getEngineLoad() {
+        return engineLoad;
+    }
+
+    public void setEngineLoad(float engineLoad) {
+        this.engineLoad = engineLoad;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
+
+    public boolean isEnableSound() {
+        return enableSound;
+    }
+
+    public void setEnableSound(boolean enableSound) {
+        this.enableSound = enableSound;
     }
 }
