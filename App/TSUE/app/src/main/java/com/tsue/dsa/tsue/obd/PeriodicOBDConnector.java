@@ -8,10 +8,15 @@ import com.github.pires.obd.commands.protocol.EchoOffCommand;
 import com.github.pires.obd.commands.protocol.ObdResetCommand;
 import com.github.pires.obd.commands.protocol.SelectProtocolCommand;
 import com.github.pires.obd.enums.ObdProtocols;
+import com.tsue.dsa.tsue.utils.BluetoothHelper;
 
 import java.io.IOException;
 
+<<<<<<< HEAD
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
+=======
+
+>>>>>>> 19f6bc908992f06233c796ca9ee31f3c4d48f4bd
 
 /**
  * The {@link PeriodicOBDConnector} opens a Bluetooth Socket once. Then it configures the OBD connection.
@@ -23,11 +28,19 @@ public class PeriodicOBDConnector extends Thread {
 
     private BluetoothDevice device;
     private BluetoothSocket socket = null;
+<<<<<<< HEAD
     private com.tsue.dsa.tsue.obd.OBDConnector obdConnector;
     private boolean run = true;
     private Integer periods = null;
     private long sleep;
     private com.tsue.dsa.tsue.obd.MyOBDCommand[] commands;
+=======
+    private OBDConnector obdConnector;
+    private boolean run = true;
+    private Integer periods = null;
+    private long sleep;
+    private MyOBDCommand[] commands;
+>>>>>>> 19f6bc908992f06233c796ca9ee31f3c4d48f4bd
 
     /**
      * Constrcutor
@@ -69,7 +82,11 @@ public class PeriodicOBDConnector extends Thread {
             }
 
             if(socket!=null){
+<<<<<<< HEAD
                 obdConnector = new com.tsue.dsa.tsue.obd.OBDConnector(socket);
+=======
+                obdConnector = new OBDConnector(socket);
+>>>>>>> 19f6bc908992f06233c796ca9ee31f3c4d48f4bd
                 obdConnector.execute(commands);
             }
 

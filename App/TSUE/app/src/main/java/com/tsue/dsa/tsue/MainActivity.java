@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -66,15 +67,13 @@ public class MainActivity extends Activity {
         gang.setText(THROTTLE_POS);
 
 
-
-        ProgressBar aussenTemp_bar = (ProgressBar) findViewById(R.id.pbr_Atemp);
         ProgressBar speed_bar = (ProgressBar) findViewById(R.id.pbr_Spd);
         ProgressBar rpm_bar = (ProgressBar) findViewById(R.id.pbr_RPM);
-        ProgressBar gas_bar = (ProgressBar) findViewById(R.id.pbr_Gsdrkng);
+        ProgressBar gas_bar = (ProgressBar) findViewById(R.id.pbr_gas);
         ProgressBar motorTemp_bar = (ProgressBar) findViewById(R.id.pbr_Mtemp);#
         */
         /*
-        ProgressBar tankFuel_bar = (ProgressBar) findViewById(R.id.pbr_Tnkfllng);
+        ProgressBar tankFuel_bar = (ProgressBar) findViewById(R.id.pbr_Tank);
         ProgressBar auslastung_bar = (ProgressBar) findViewById(R.id.pbr_Auslstng);
 
         //SPEED
@@ -116,7 +115,7 @@ public class MainActivity extends Activity {
 
         // Settings_Buton
 
-        Button btn_einstellungen = (Button) findViewById(R.id.btn_enstllngn);
+        ImageButton btn_einstellungen = (ImageButton) findViewById(R.id.btn_settings);
         btn_einstellungen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
