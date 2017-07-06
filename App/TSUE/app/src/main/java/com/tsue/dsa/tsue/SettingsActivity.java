@@ -14,7 +14,7 @@ import com.tsue.dsa.tsue.utils.OBDComandHandler;
 
 import java.util.ArrayList;
 
-import de.dsa.goit.odbviewer.R;
+//import de.dsa.goit.odbviewer.R;
 
 /**
  * Created by dsa on 06.07.2017.

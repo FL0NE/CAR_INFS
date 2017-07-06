@@ -21,9 +21,6 @@ import java.util.ArrayList;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
 
-import de.dsa.goit.odbviewer.R;
-
-
 /**
  * MainActivity, start on startup.
  */
