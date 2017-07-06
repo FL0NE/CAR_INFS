@@ -56,6 +56,26 @@ public class MainActivity extends Activity {
 		
         //VARIABLEN
 
+
+
+        //TEST START
+
+        int a = 12;
+
+        Intent xax = new Intent(null);
+        xax.putExtra("abc", a);
+
+
+        //TEST ENDE
+
+
+
+
+
+
+
+
+
         TextView hohe = (TextView) findViewById(R.id.hohe_wert);
         TextView entfernung = (TextView) findViewById(R.id.entf_wert);
         TextView gang = (TextView) findViewById(R.id.gang_wert);

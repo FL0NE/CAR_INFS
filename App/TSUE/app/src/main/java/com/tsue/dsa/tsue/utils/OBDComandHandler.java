@@ -9,6 +9,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.tsue.dsa.tsue.R;
 import com.tsue.dsa.tsue.model.ModeOptions;
 import com.tsue.dsa.tsue.model.Modes;
 import com.tsue.dsa.tsue.obd.MyOBDCommand;
@@ -59,7 +60,7 @@ public class OBDComandHandler {
         this.tankProgressBar = activity.findViewById(R.id.tankProgressBar);
         this.engineLoadProgressBar = activity.findViewById(R.id.engineLoadProgressBar);
     }
-
+*/
     public void createCommands() {
         MyOBDCommand[] commands = new MyOBDCommand[]{
                 createSingleCommand(ModeOptions.THROTTLE_POS, 1, throttlePosTextView),
@@ -75,7 +76,7 @@ public class OBDComandHandler {
         connectToBluetooth(commands);
     }
 
-    private MyOBDCommand createSingleCommand(ModeOptions option, double modifier, TextView textView, ProgressBar progressBar;) {
+    private MyOBDCommand createSingleCommand(ModeOptions option, double modifier, TextView textView, ProgressBar progressBar) {
         MyOBDCommand result = new MyOBDCommand(Modes.SHOW_CURRENT_DATA, option, modifier, textView, progressBar);
         return result;
     }
