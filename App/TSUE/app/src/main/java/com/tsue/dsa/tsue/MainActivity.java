@@ -117,7 +117,7 @@ public class MainActivity extends Activity {
 
         // Settings_Buton
 
-        ImageButton btn_einstellungen = (ImageButton) findViewById(R.id.imageButton);
+        ImageButton btn_einstellungen = (ImageButton) findViewById(R.id.btn_settings);
         btn_einstellungen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
