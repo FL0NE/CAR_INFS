@@ -70,10 +70,10 @@ public class SettingsActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         Setting setting = new Setting();
-        setting.setFuel(Float.valueOf(benzin.getText().toString()));
-        setting.setEngineLoad(Float.valueOf(engineLoad.getText().toString()));
-        setting.setEngineTemp(Float.valueOf(engineTemp.getText().toString()));
-        setting.setSpeed(Float.valueOf(speed.getText().toString()));
+        setting.setFuel(benzin.getText().toString());
+        setting.setEngineLoad(engineLoad.getText().toString());
+        setting.setEngineTemp(engineTemp.getText().toString());
+        setting.setSpeed(speed.getText().toString());
         setting.setEnableSound(soundSwitch.isEnabled());
         SettingsManager.setSetting(setting);
     }
