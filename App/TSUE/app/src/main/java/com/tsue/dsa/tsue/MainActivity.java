@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         commandHandler = new OBDComandHandler(this);
         bluetoothDevice = BluetoothDeivceManager.getBluetoothDevice();
-        //VARIABLEN
+        commandHandler.setBluetoothDevice(bluetoothDevice);
         commandHandler.createCommands();
         TextView hohe = (TextView) findViewById(R.id.hohe_wert);
         TextView entfernung = (TextView) findViewById(R.id.entf_wert);

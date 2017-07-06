@@ -100,8 +100,8 @@ public class StartActivity extends Activity {
                 if (currentSelectedDevice == null) {
                     Toast toast = Toast.makeText(StartActivity.this, "No device Selected !", Toast.LENGTH_SHORT);
                     toast.show();
-                    BluetoothDeivceManager.setBluetoothDevice(currentSelectedDevice);
                 } else {
+                    BluetoothDeivceManager.setBluetoothDevice(currentSelectedDevice);
                     Intent intent = new Intent(StartActivity.this,MainActivity.class);
                     startActivity(intent);
                 }

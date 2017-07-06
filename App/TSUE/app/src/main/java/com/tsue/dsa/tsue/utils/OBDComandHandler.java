@@ -27,7 +27,7 @@ public class OBDComandHandler {
     private final TextView coolantTempTextView;
     private final TextView tankTextView;
     private final TextView distanceTextView;
-//    private final TextView timeTextView;
+    //    private final TextView timeTextView;
     private final TextView ambientTempTextView;
     private final TextView engineLoadTextView;
     private final ProgressBar speedProgressBar;
@@ -45,8 +45,10 @@ public class OBDComandHandler {
 
     public OBDComandHandler(Activity activity) {
         this.activity = activity;
+
         this.rpmTextView = (TextView) activity.findViewById(R.id.txt_RPM);
-        this.speedTextView = (TextView) activity.findViewById(R.id.txt_Spd);
+        this.rpmTextView = (TextView) activity.findViewById(R.id.rpm_wert);
+        this.speedTextView = (TextView) activity.findViewById(R.id.kmh_wert);
         this.throttlePosTextView = (TextView) activity.findViewById(R.id.txt_Gsdrkng);
         this.coolantTempTextView = (TextView) activity.findViewById(R.id.txt_Mtemp);
         this.tankTextView = (TextView) activity.findViewById(R.id.txt_Tnkfllng);
@@ -61,11 +63,12 @@ public class OBDComandHandler {
         this.coolantTempProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_Mtemp);
         this.tankProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_Tank);
         this.engineLoadProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_Auslstng);
+
     }
 
     public void createCommands() {
         MyOBDCommand[] commands = new MyOBDCommand[]{
-                createSingleCommand(ModeOptions.THROTTLE_POS, 1, throttlePosTextView),
+                createSingleCommand(ModeOptions.THROTTLE_POS, 0.392156862745098, throttlePosTextView),
                 createSingleCommand(ModeOptions.DISTANCE, 1, distanceTextView),
 //                createSingleCommand(ModeOptions.TIME, 1, timeTextView),
                 createSingleCommand(ModeOptions.AMBIENT_TEMP, 1, ambientTempTextView),
@@ -95,7 +98,7 @@ public class OBDComandHandler {
     private void connectToBluetooth(MyOBDCommand... commands) {
 
         if (bluetoothDevice != null) {
-            odbConnector = new PeriodicOBDConnector(bluetoothDevice, 5000, commands);
+            odbConnector = new PeriodicOBDConnector(bluetoothDevice, 500, commands);
             odbConnector.start();
             Toast toast = Toast.makeText(activity, "Started", Toast.LENGTH_LONG);
             toast.show();
