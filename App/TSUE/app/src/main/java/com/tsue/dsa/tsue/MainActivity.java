@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,8 +19,6 @@ import java.util.ArrayList;
 //import com.tsue.dsa.tsue.ui.ButtonClickHandler;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
-
-import de.dsa.goit.odbviewer.R;
 
 
 /**

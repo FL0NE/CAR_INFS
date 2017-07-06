@@ -18,8 +18,6 @@ import com.tsue.dsa.tsue.utils.OBDComandHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.dsa.goit.odbviewer.R;
-
 /**
  * Created by DSA on 06.07.2017.
  */
@@ -44,6 +42,8 @@ public class StartActivity extends Activity {
         initListener();
         initAdapter();
         initSpinner();
+        requestBluetooth();
+        comandHandler = new OBDComandHandler(this);
     }
 
     @Override
