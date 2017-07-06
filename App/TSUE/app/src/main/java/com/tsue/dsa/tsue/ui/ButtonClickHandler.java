@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,6 +67,10 @@ public class ButtonClickHandler {
      * @param buttonID The ID of the Button for which you want to generate the {@link MyOBDCommand}
      * @return the generated {@link MyOBDCommand}, can be null
      */
+    private MyOBDCommand getCommand(ModeOptions option,double multiplicator,int id) {
+        ProgressBar progressBar;
+        MyOBDCommand command = new MyOBDCommand(Modes.SHOW_CURRENT_DATA,option,multiplicator,progressBar);
+    }
     private  MyOBDCommand getCommandForButton(int buttonID) {
         MyOBDCommand com = null;
         TextView component;
