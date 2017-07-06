@@ -13,7 +13,7 @@ public class BluetoothDeivceManager {
         bluetoothDevice = device;
     }
 
-    public BluetoothDevice getBluetoothDevice() {
+    public static BluetoothDevice getBluetoothDevice() {
         return bluetoothDevice;
     }
 }

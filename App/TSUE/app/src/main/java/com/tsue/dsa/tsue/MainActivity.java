@@ -17,6 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 //import com.tsue.dsa.tsue.ui.ButtonClickHandler;
+import com.tsue.dsa.tsue.utils.BluetoothDeivceManager;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
 
@@ -38,96 +39,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.d("lifecycle", "onCreate invoked");
         setContentView(R.layout.activity_main);
-
-/*        //init bluetooth selection spinner
-        bluetoothSpinner = (Spinner) findViewById(R.id.bluetooth_spinner);
-        spinnerAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, listItems);
-        bluetoothSpinner.setAdapter(spinnerAdapter);
-        addBluetoothSpinnerListener();
-*/
-
         commandHandler = new OBDComandHandler(this);
-        //request bluetooth access
-        bluetoothHelper = new BluetoothHelper();
-        requestBluetooth();
-		
-		
+        bluetoothDevice = BluetoothDeivceManager.getBluetoothDevice();
         //VARIABLEN
-
-
-
-
-
-
-
-
-
-
-
-
+        commandHandler.createCommands();
         TextView hohe = (TextView) findViewById(R.id.hohe_wert);
         TextView entfernung = (TextView) findViewById(R.id.entf_wert);
         TextView gang = (TextView) findViewById(R.id.gang_wert);
-
-        /*
-
-        hohe.setText(HEIGHT);
-        entfernung.setText(DISTANCE);
-        gang.setText(THROTTLE_POS);
-
-
-
-        ProgressBar aussenTemp_bar = (ProgressBar) findViewById(R.id.pbr_Atemp);
-        ProgressBar speed_bar = (ProgressBar) findViewById(R.id.pbr_Spd);
-        ProgressBar rpm_bar = (ProgressBar) findViewById(R.id.pbr_RPM);
-        ProgressBar gas_bar = (ProgressBar) findViewById(R.id.pbr_Gsdrkng);
-        ProgressBar motorTemp_bar = (ProgressBar) findViewById(R.id.pbr_Mtemp);#
-        */
-        /*
-        ProgressBar tankFuel_bar = (ProgressBar) findViewById(R.id.pbr_Tnkfllng);
-        ProgressBar auslastung_bar = (ProgressBar) findViewById(R.id.pbr_Auslstng);
-
-        //SPEED
-        //RPM
-        //THROTTLE_POS
-        //COOLANT_TEMP
-        //MAF -> luft flow
-        //TANK
-        //Distance
-        //Time
-        //ENGINE_LOAD
-
-
-        int maxAussenTemp = 40;
-        int aussenTemp = (AMBIENT_TEMP / maxAussenTemp)*100;
-
-        int maxSpeed = 200;
-        int speed_prozent = (SPEED / maxSpeed) * 100;
-
-        int rpm_max = 0;
-        int rpm_prozent = (RPM / rpm_max) * 100;
-
-        int maxMotor = 0;
-
-
-
-        aussenTemp_bar.setProgress(AMBIENT_TEMP);
-        speed_bar.setProgress(SPEED);
-        rpm_bar.setProgress(RPM);
-        gas_bar.setProgress(0);
-        motorTemp_bar.setProgress(COOLANT_TEMP);
-        tankFuel_bar.setProgress(TANK);
-        auslastung_bar.setProgress(ENGINE_LOAD);
-
-*/
-        //ENDE VARIABLEN
-
-
-
-        // Settings_Button
-
-
         ImageButton btn_einstellungen = (ImageButton) findViewById(R.id.btn_settings);
         btn_einstellungen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,40 +62,6 @@ public class MainActivity extends Activity {
         super.onDestroy();
         //To-Do close socket
         Log.d("lifecycle", "onDestroy invoked");
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //Request access again or update spinner with list of Bluetooth devices
-        if (requestCode == BluetoothHelper.REQUEST_ENABLE_BT && resultCode == RESULT_OK) {
-            bluetoothHelper.initBluetooth();
-            updateAdapter(spinnerAdapter);
-        } else if (requestCode == BluetoothHelper.REQUEST_ENABLE_BT) {
-            Toast toast = Toast.makeText(this, "Need bluetooth to work!", Toast.LENGTH_LONG);
-            toast.show();
-            requestBluetooth();
-        }
-    }
-
-
-    /**
-     * Used the bluetoothHelper to request bluetooth access
-     */
-    private void requestBluetooth() {
-        if (bluetoothHelper.requestBluetooth(this)) {
-            updateAdapter(spinnerAdapter);
-        }
-    }
-
-    /**
-     * Updates the given ArrayAdapter
-     *
-     * @param adapter the Adapter that should be updated.
-     */
-    private void updateAdapter(ArrayAdapter adapter) {
-        adapter.clear();
-        adapter.addAll(bluetoothHelper.getPairedDeviceNames());
-        adapter.notifyDataSetChanged();
     }
 
 

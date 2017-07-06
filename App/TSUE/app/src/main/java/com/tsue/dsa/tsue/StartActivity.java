@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.tsue.dsa.tsue.utils.BluetoothDeivceManager;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
 
@@ -99,6 +100,7 @@ public class StartActivity extends Activity {
                 if (currentSelectedDevice == null) {
                     Toast toast = Toast.makeText(StartActivity.this, "No device Selected !", Toast.LENGTH_SHORT);
                     toast.show();
+                    BluetoothDeivceManager.setBluetoothDevice(currentSelectedDevice);
                 } else {
                     Intent intent = new Intent(StartActivity.this,MainActivity.class);
                     startActivity(intent);
