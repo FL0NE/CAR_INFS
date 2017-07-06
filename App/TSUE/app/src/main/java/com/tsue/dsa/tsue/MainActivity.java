@@ -67,13 +67,15 @@ public class MainActivity extends Activity {
         gang.setText(THROTTLE_POS);
 
 
+
+        ProgressBar aussenTemp_bar = (ProgressBar) findViewById(R.id.pbr_Atemp);
         ProgressBar speed_bar = (ProgressBar) findViewById(R.id.pbr_Spd);
         ProgressBar rpm_bar = (ProgressBar) findViewById(R.id.pbr_RPM);
-        ProgressBar gas_bar = (ProgressBar) findViewById(R.id.pbr_gas);
+        ProgressBar gas_bar = (ProgressBar) findViewById(R.id.pbr_Gsdrkng);
         ProgressBar motorTemp_bar = (ProgressBar) findViewById(R.id.pbr_Mtemp);#
         */
         /*
-        ProgressBar tankFuel_bar = (ProgressBar) findViewById(R.id.pbr_Tank);
+        ProgressBar tankFuel_bar = (ProgressBar) findViewById(R.id.pbr_Tnkfllng);
         ProgressBar auslastung_bar = (ProgressBar) findViewById(R.id.pbr_Auslstng);
 
         //SPEED
@@ -115,7 +117,7 @@ public class MainActivity extends Activity {
 
         // Settings_Buton
 
-        ImageButton btn_einstellungen = (ImageButton) findViewById(R.id.btn_settings);
+        ImageButton btn_einstellungen = (ImageButton) findViewById(R.id.imageButton);
         btn_einstellungen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
