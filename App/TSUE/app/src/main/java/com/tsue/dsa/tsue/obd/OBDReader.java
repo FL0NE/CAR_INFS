@@ -18,10 +18,11 @@ public class OBDReader {
 
     /**
      * Constructor
-     * @param socket the socket to connect to
+     *
+     * @param socket  the socket to connect to
      * @param command the OBDCommand to execute
      */
-    public OBDReader(BluetoothSocket socket , MyOBDCommand command) {
+    public OBDReader(BluetoothSocket socket, MyOBDCommand command) {
         this.socket = socket;
         this.obdCommand = command;
     }
@@ -30,10 +31,11 @@ public class OBDReader {
      * Will call the run method for the obdCommand, given in the constrcutor.
      */
     public void start() {
-        try{
+        try {
             obdCommand.run(socket.getInputStream(), socket.getOutputStream());
         } catch (Exception e) {
-            Log.e("OBDReader", "Could not use lib.", e);
+//            Log.e("OBDReader", "Could not use lib.", e);
+            Log.i("OBDReader", "Could not user lib.");
         }
     }
 }
