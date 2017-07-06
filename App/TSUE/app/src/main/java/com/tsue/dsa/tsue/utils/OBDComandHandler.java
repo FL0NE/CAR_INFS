@@ -60,7 +60,7 @@ public class OBDComandHandler {
         this.tankProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_Tank);
         this.engineLoadProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_Auslstng);
     }
-*/
+
     public void createCommands() {
         MyOBDCommand[] commands = new MyOBDCommand[]{
                 createSingleCommand(ModeOptions.THROTTLE_POS, 1, throttlePosTextView),

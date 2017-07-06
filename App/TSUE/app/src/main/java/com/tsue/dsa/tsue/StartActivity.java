@@ -26,7 +26,7 @@ public class StartActivity extends Activity {
     private Spinner bluetoothDeviceSpinner;
     private BluetoothDevice currentSelectedDevice;
     private List<String> listItems = new ArrayList<String>();
-    private ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>()
+    private ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>();
     private BluetoothHelper bluetoothHelper;
 
     @Override
