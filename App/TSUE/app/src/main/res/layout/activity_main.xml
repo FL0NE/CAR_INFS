@@ -8,6 +8,42 @@
     tools:layout_editor_absoluteY="81dp"
     tools:layout_editor_absoluteX="0dp" android:background="#EDEDED">
 
+    <TextView
+        android:id="@+id/auslastung_wert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="n.A."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <TextView
+        android:id="@+id/gas_wert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="n.A."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.265" />
+
+    <TextView
+        android:id="@+id/tank_wert"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="n.A."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.388" />
+
     <ProgressBar
         android:id="@+id/pbr_Spd"
         style="?android:attr/progressBarStyleHorizontal"
