@@ -26,8 +26,8 @@
         android:layout_width="159dp"
         android:layout_height="84dp"
         android:text="Bitte wählen Sie Ihr Gerät aus!"
-        android:textScaleX="15sp"
-        android:textSize="16sp"
+        android:textScaleX="15"
+        android:textSize="16dp"
         android:textStyle="normal"
         tools:layout_editor_absoluteX="113dp"
         tools:layout_editor_absoluteY="141dp" />
@@ -39,7 +39,8 @@
         android:fontFamily="serif"
         android:text="Willkommen!"
         android:textSize="30sp"
-        android:textStyle="bold||italic"
+        android:textStyle="bold|italic"
         tools:layout_editor_absoluteX="94dp"
+
         tools:layout_editor_absoluteY="36dp" />
 </android.support.constraint.ConstraintLayout>
