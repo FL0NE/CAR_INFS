@@ -21,6 +21,8 @@ import com.tsue.dsa.tsue.ui.ButtonClickHandler;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
 
+import de.dsa.goit.odbviewer.R;
+
 
 /**
  * MainActivity, start on startup.
@@ -33,7 +35,6 @@ public class MainActivity extends Activity {
     private BluetoothHelper bluetoothHelper;
     private OBDComandHandler commandHandler;
     private BluetoothDevice bluetoothDevice;
-    public static final int maxGeschwindigkeit = 300;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +42,13 @@ public class MainActivity extends Activity {
         Log.d("lifecycle", "onCreate invoked");
         setContentView(R.layout.activity_main);
 
-        //init bluetooth selection spinner
+/*        //init bluetooth selection spinner
         bluetoothSpinner = (Spinner) findViewById(R.id.bluetooth_spinner);
         spinnerAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, listItems);
         bluetoothSpinner.setAdapter(spinnerAdapter);
         addBluetoothSpinnerListener();
+*/
 
         commandHandler = new OBDComandHandler(this);
         //request bluetooth access
@@ -115,7 +117,8 @@ public class MainActivity extends Activity {
 
 
 
-        // Settings_Buton
+        // Settings_Button
+
 
         ImageButton btn_einstellungen = (ImageButton) findViewById(R.id.btn_settings);
         btn_einstellungen.setOnClickListener(new View.OnClickListener() {
