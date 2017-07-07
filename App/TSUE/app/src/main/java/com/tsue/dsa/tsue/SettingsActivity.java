@@ -53,7 +53,7 @@ public class SettingsActivity extends Activity {
         engineLoad.setText(setting.getEngineLoad()+"");
         engineTemp.setText(setting.getEngineTemp()+"");
         speed.setText(setting.getSpeed()+"");
-        
+
     }
 
     private void addBluetoothSpinnerListener() {

@@ -119,32 +119,28 @@ public class MyOBDCommand extends ObdCommand {
      * Sets the return value of the getCalculatedResult to the text view, given in the constructor.
      */
     public void updateUI() {
+
+
         if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
-            try {
-                String value = getCalculatedResult();
-                Integer percentage = getCalculatedPercentage();
-                if (value == null || value.equals("") || value.isEmpty() || textViewUpdate == null) {
-                    return;
-                }
-                Setting setting = SettingsManager.getSetting();
-                double fuel = setting.getFuel();
-                double engineLoad = setting.getEngineLoad();
-                double temp = setting.getEngineTemp();
-                double speed = setting.getSpeed();
-                MediaPlayer mediaPlayer = MediaPlayer.create(activity, R.raw.test_sound);
-                if (setting.isEnableSound()) {
-                    mediaPlayer.start();
-                }
-                if (mediaPlayer.isPlaying() && !setting.isEnableSound()) {
-                    mediaPlayer.stop();
-                }
-                textViewUpdate.setText(value);
-                if (option == ModeOptions.THROTTLE_POS || option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
-                    progressbarUpdate.setProgress(percentage);
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
+            String value = getCalculatedResult();
+            int percentage = getCalculatedPercentage();
+            Setting setting = SettingsManager.getSetting();
+            double fuel = setting.getFuel();
+            double engineLoad = setting.getEngineLoad();
+            double temp = setting.getEngineTemp();
+            double speed = setting.getSpeed();
+            MediaPlayer mediaPlayer = MediaPlayer.create(activity, R.raw.test_sound);
+            if (setting.isEnableSound()) {
+                mediaPlayer.start();
             }
+            if (mediaPlayer.isPlaying() && !setting.isEnableSound()) {
+                mediaPlayer.stop();
+            }
+            textViewUpdate.setText(value);
+            if (option == ModeOptions.THROTTLE_POS || option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
+                progressbarUpdate.setProgress(percentage);
+            }
+
 
         }
     }
