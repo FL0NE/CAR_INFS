@@ -323,20 +323,17 @@
         tools:layout_editor_absoluteX="308dp" />
 
     <Button
-        android:id="@+id/btn_test"
-        android:text="TEST"
+        android:id="@+id/btn_test_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
+        android:text="TEST"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.297"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.008" />
-=======
+        app:layout_constraintVertical_bias="0.008"
         tools:layout_editor_absoluteY="4dp"
         tools:layout_editor_absoluteX="111dp" />
->>>>>>> 0c6539afc589ebff7597bf9e9cc0434a1db91f34
 
 </android.support.constraint.ConstraintLayout>
