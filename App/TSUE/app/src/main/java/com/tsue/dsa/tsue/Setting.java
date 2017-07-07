@@ -5,41 +5,41 @@ package com.tsue.dsa.tsue;
  */
 
 public class Setting {
-    private String fuel;
-    private String engineLoad;
-    private String engineTemp;
-    private String speed;
+    private double fuel;
+    private double engineLoad;
+    private double engineTemp;
+    private double speed;
     private boolean enableSound;
 
-    public String getEngineTemp() {
+    public double getEngineTemp() {
         return engineTemp;
     }
 
-    public void setEngineTemp(String engineTemp) {
+    public void setEngineTemp(double engineTemp) {
         this.engineTemp = engineTemp;
     }
 
-    public String getFuel() {
+    public double getFuel() {
         return fuel;
     }
 
-    public void setFuel(String fuel) {
+    public void setFuel(double fuel) {
         this.fuel = fuel;
     }
 
-    public String getEngineLoad() {
+    public double getEngineLoad() {
         return engineLoad;
     }
 
-    public void setEngineLoad(String engineLoad) {
+    public void setEngineLoad(double engineLoad) {
         this.engineLoad = engineLoad;
     }
 
-    public String getSpeed() {
+    public double getSpeed() {
         return speed;
     }
 
-    public void setSpeed(String speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
 

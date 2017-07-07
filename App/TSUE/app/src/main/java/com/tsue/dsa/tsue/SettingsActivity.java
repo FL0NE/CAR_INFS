@@ -2,6 +2,7 @@ package com.tsue.dsa.tsue;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,6 +47,13 @@ public class SettingsActivity extends Activity {
         engineTemp = (EditText) findViewById(R.id.num_Mtemp);
         speed = (EditText) findViewById(R.id.num_maxSpeed);
         soundSwitch = (Switch) findViewById(R.id.sound_switch);
+        Setting setting = SettingsManager.loadSettings(getPreferences(Context.MODE_PRIVATE));
+        soundSwitch.setChecked(setting.isEnableSound());
+        benzin.setText(setting.getFuel()+"");
+        engineLoad.setText(setting.getEngineLoad()+"");
+        engineTemp.setText(setting.getEngineTemp()+"");
+        speed.setText(setting.getSpeed()+"");
+
     }
 
     private void addBluetoothSpinnerListener() {
@@ -70,11 +78,12 @@ public class SettingsActivity extends Activity {
     protected void onDestroy() {
         super.onDestroy();
         Setting setting = new Setting();
-        setting.setFuel(benzin.getText().toString());
-        setting.setEngineLoad(engineLoad.getText().toString());
-        setting.setEngineTemp(engineTemp.getText().toString());
-        setting.setSpeed(speed.getText().toString());
-        setting.setEnableSound(soundSwitch.isEnabled());
+        setting.setFuel(benzin.getText().length() > 0 ? Double.valueOf(benzin.getText().toString()) : 0.0);
+        setting.setEngineLoad(engineLoad.getText().length() > 0 ? Double.valueOf(engineLoad.getText().toString()) : 0.0);
+        setting.setEngineTemp(engineTemp.getText().length() > 0 ? Double.valueOf(engineTemp.getText().toString()) : 0.0);
+        setting.setSpeed(speed.getText().length() > 0 ? Double.valueOf(speed.getText().toString()) : 0.0);
+        setting.setEnableSound(soundSwitch.isChecked());
         SettingsManager.setSetting(setting);
+        SettingsManager.saveSettings(this.getPreferences(Context.MODE_PRIVATE));
     }
 }

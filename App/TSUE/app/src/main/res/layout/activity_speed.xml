@@ -10,7 +10,6 @@
         android:id="@+id/pointerSpeedometer"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:orientation="center"
         android:foregroundGravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
