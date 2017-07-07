@@ -3,7 +3,9 @@ package com.tsue.dsa.tsue;
 import android.app.Activity;
 
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +35,7 @@ public class MainActivity extends Activity {
     private BluetoothHelper bluetoothHelper;
     private OBDComandHandler commandHandler;
     private BluetoothDevice bluetoothDevice;
+    private Setting setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,14 @@ public class MainActivity extends Activity {
                 startActivity(settingsIntent);
             }
         });
+        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
+        Setting setting = new Setting();
+        setting.setEnableSound(preferences.getBoolean(SettingsManager.SOUND_ENABLED_KEY, false));
+        setting.setEngineLoad(Double.valueOf(preferences.getString((SettingsManager.ENGINE_LOAD_KEY), 0.0 + "")));
+        setting.setEngineTemp(Double.valueOf(preferences.getString(SettingsManager.ENGINE_TEMP_KEY, 0.0 + "")));
+        setting.setFuel(Double.valueOf(preferences.getString(SettingsManager.FUEL_KEY, 0.0 + "")));
+        setting.setSpeed(Double.valueOf(preferences.getString(SettingsManager.SPEED, 0.0 + "")));
+        SettingsManager.setSetting(setting);
     }
 
 
