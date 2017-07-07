@@ -2,9 +2,6 @@ package com.tsue.dsa.tsue.utils;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
-import android.graphics.PorterDuff;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;

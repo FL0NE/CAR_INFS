@@ -1,5 +1,6 @@
 package com.tsue.dsa.tsue;
 
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -12,7 +13,6 @@ public class SpeedActivity extends AppCompatActivity implements OnDataChangedLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speed);
-        DataManager.subscribeSpeed(this);
     }
 
     @Override

@@ -57,6 +57,24 @@ public class MainActivity extends Activity implements OnDataChangedListener {
                 startActivity(settingsIntent);
             }
         });
+
+
+
+
+        //TEST BUTTON
+
+        Button tstbtn = (Button) findViewById(R.id.btn_test_2);
+        tstbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent tstIntent = new Intent(MainActivity.this, SpeedActivity.class);
+                startActivity(tstIntent);
+            }
+        });
+
+        //TEST ENDE
+
+
         SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
         Setting setting = new Setting();
         setting.setEnableSound(preferences.getBoolean(SettingsManager.SOUND_ENABLED_KEY, false));
@@ -67,6 +85,7 @@ public class MainActivity extends Activity implements OnDataChangedListener {
         SettingsManager.setSetting(setting);
         registerOnDataChangedListener();
     }
+
 
 
     @Override
@@ -96,12 +115,6 @@ public class MainActivity extends Activity implements OnDataChangedListener {
                 bluetoothDevice = null;
             }
         });
-    }
-
-    private void registerOnDataChangedListener() {
-        DataManager.subscribeMain(this);
-    }
-
     @Override
     public void engineLoadChanged(double load) {
 
