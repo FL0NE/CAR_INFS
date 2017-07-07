@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".SpeedActivity"></activity>
+        <activity android:name=".SpeedActivity"/>
     </application>
 
 </manifest>

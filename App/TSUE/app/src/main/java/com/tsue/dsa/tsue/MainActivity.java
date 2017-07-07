@@ -48,7 +48,6 @@ public class MainActivity extends Activity {
         commandHandler.createCommands();
         TextView hohe = (TextView) findViewById(R.id.hohe_wert);
         TextView entfernung = (TextView) findViewById(R.id.entf_wert);
-        TextView gang = (TextView) findViewById(R.id.gang_wert);
         ImageButton btn_einstellungen = (ImageButton) findViewById(R.id.btn_settings);
         btn_einstellungen.setOnClickListener(new View.OnClickListener() {
             @Override
