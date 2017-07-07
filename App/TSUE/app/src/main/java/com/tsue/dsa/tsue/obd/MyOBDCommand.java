@@ -14,6 +14,11 @@ import com.tsue.dsa.tsue.model.ModeOptionValues;
 import com.tsue.dsa.tsue.model.ModeOptions;
 import com.tsue.dsa.tsue.model.Modes;
 import com.tsue.dsa.tsue.model.Unit;
+import com.tsue.dsa.tsue.utils.DataManager;
+import com.tsue.dsa.tsue.utils.OnDataChangedListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * MyOBDCommand is a OBDCommand.
@@ -29,6 +34,7 @@ public class MyOBDCommand extends ObdCommand {
     private ModifierCalculator modifierCalculator;
     private TextView textViewUpdate;
     private ModeOptions option;
+    private List<OnDataChangedListener> listener = new ArrayList<>();
     Unit unit = null;
 
 //    /**
@@ -120,28 +126,40 @@ public class MyOBDCommand extends ObdCommand {
      */
     public void updateUI() {
 
-
-        if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
-            String value = getCalculatedResult();
-            int percentage = getCalculatedPercentage();
-            Setting setting = SettingsManager.getSetting();
-            double fuel = setting.getFuel();
-            double engineLoad = setting.getEngineLoad();
-            double temp = setting.getEngineTemp();
-            double speed = setting.getSpeed();
-            MediaPlayer mediaPlayer = MediaPlayer.create(activity, R.raw.test_sound);
-            if (setting.isEnableSound()) {
-                mediaPlayer.start();
-            }
-            if (mediaPlayer.isPlaying() && !setting.isEnableSound()) {
-                mediaPlayer.stop();
-            }
-            textViewUpdate.setText(value);
-            if (option == ModeOptions.THROTTLE_POS || option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
-                progressbarUpdate.setProgress(percentage);
-            }
+        try {
 
 
+            if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
+                String value = getCalculatedResult();
+                if (value == null || value.isEmpty()) {
+                    return;
+                }
+                for (OnDataChangedListener currentListener : listener) {
+                    currentListener.engineLoadChanged(12.00);
+                }
+                int percentage = getCalculatedPercentage();
+                Setting setting = SettingsManager.getSetting();
+                double fuel = setting.getFuel();
+                double engineLoad = setting.getEngineLoad();
+                double temp = setting.getEngineTemp();
+                double speed = setting.getSpeed();
+                if (option == ModeOptions.SPEED) {
+                    DataManager.onSpeedChanged(Double.valueOf(value));
+                }
+                MediaPlayer mediaPlayer = MediaPlayer.create(activity, R.raw.test_sound);
+                if (setting.isEnableSound()) {
+                    mediaPlayer.start();
+                }
+                if (mediaPlayer.isPlaying() && !setting.isEnableSound()) {
+                    mediaPlayer.stop();
+                }
+                textViewUpdate.setText(value);
+                if (option == ModeOptions.THROTTLE_POS || option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
+                    progressbarUpdate.setProgress(percentage);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 }

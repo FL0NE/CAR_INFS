@@ -16,6 +16,9 @@ import com.tsue.dsa.tsue.obd.ModifierCalculator;
 import com.tsue.dsa.tsue.obd.MyOBDCommand;
 import com.tsue.dsa.tsue.obd.PeriodicOBDConnector;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by DSA on 06.07.2017.
  */
@@ -38,7 +41,6 @@ public class OBDComandHandler {
     private final ProgressBar engineLoadProgressBar;
     private final ProgressBar throttleProgressBar;
     private int idOfSelectedButton;
-
     private TextView rpmTextView;
     private BluetoothDevice bluetoothDevice;
     private PeriodicOBDConnector odbConnector;
@@ -47,16 +49,15 @@ public class OBDComandHandler {
     public OBDComandHandler(Activity activity) {
         this.activity = activity;
 
-        this.rpmTextView = (TextView) activity.findViewById(R.id.txt_RPM);
         this.rpmTextView = (TextView) activity.findViewById(R.id.rpm_wert);
         this.speedTextView = (TextView) activity.findViewById(R.id.kmh_wert);
-        this.throttlePosTextView = (TextView) activity.findViewById(R.id.txt_Gsdrkng);
-        this.coolantTempTextView = (TextView) activity.findViewById(R.id.txt_Mtemp);
-        this.tankTextView = (TextView) activity.findViewById(R.id.txt_Tnkfllng);
-        this.distanceTextView = (TextView) activity.findViewById(R.id.txt_Entfrng);
+        this.throttlePosTextView = (TextView) activity.findViewById(R.id.gas_wert);
+        this.coolantTempTextView = (TextView) activity.findViewById(R.id.aussenTemp_wert);
+        this.tankTextView = (TextView) activity.findViewById(R.id.tank_wert);
+        this.distanceTextView = (TextView) activity.findViewById(R.id.entf_wert);
 //        this.timeTextView = activity.findViewById(R.id.txt_);
-        this.ambientTempTextView = (TextView) activity.findViewById(R.id.txt_Atemp);
-        this.engineLoadTextView = (TextView) activity.findViewById(R.id.txt_Alastung);
+        this.ambientTempTextView = (TextView) activity.findViewById(R.id.aussenTemp_wert);
+        this.engineLoadTextView = (TextView) activity.findViewById(R.id.motortemp_wert);
 
         this.throttleProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_gas);
         this.speedProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_Spd);
@@ -112,6 +113,7 @@ public class OBDComandHandler {
         };
         connectToBluetooth(commands);
     }
+
     private MyOBDCommand createSingleCommand(ModeOptions option, ModifierCalculator modifier, TextView textView, ProgressBar progressBar) {
         MyOBDCommand result = new MyOBDCommand(activity, Modes.SHOW_CURRENT_DATA, option, modifier, textView, progressBar);
         return result;

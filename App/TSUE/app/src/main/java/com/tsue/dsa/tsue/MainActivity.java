@@ -11,24 +11,24 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 //import com.tsue.dsa.tsue.ui.ButtonClickHandler;
 import com.tsue.dsa.tsue.utils.BluetoothDeivceManager;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
+import com.tsue.dsa.tsue.utils.DataManager;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
+import com.tsue.dsa.tsue.utils.OnDataChangedListener;
 
 
 /**
  * MainActivity, start on startup.
  */
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnDataChangedListener {
 
     private ArrayAdapter<String> spinnerAdapter;
     private ArrayList<String> listItems = new ArrayList<String>();
@@ -65,7 +65,7 @@ public class MainActivity extends Activity {
         setting.setFuel(Double.valueOf(preferences.getString(SettingsManager.FUEL_KEY, 0.0 + "")));
         setting.setSpeed(Double.valueOf(preferences.getString(SettingsManager.SPEED, 0.0 + "")));
         SettingsManager.setSetting(setting);
-    }
+        registerOnDataChangedListener();
     }
 
 
@@ -96,7 +96,39 @@ public class MainActivity extends Activity {
                 bluetoothDevice = null;
             }
         });
+    }
 
+    private void registerOnDataChangedListener() {
+        DataManager.subscribeMain(this);
+    }
+
+    @Override
+    public void engineLoadChanged(double load) {
+
+    }
+
+    @Override
+    public void throttleLoadChanged(double load) {
+
+    }
+
+    @Override
+    public void fuelLoadChanged(double load) {
+
+    }
+
+    @Override
+    public void rpmLoadChanged(double load) {
+
+    }
+
+    @Override
+    public void speedLoadChanged(double load) {
+        Log.i("speed", load+"");
+    }
+
+    @Override
+    public void engineTempChanged(double load) {
 
     }
 }
