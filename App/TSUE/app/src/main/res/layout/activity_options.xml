@@ -14,8 +14,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.817"
-        android:layout_marginBottom="105dp" />
+        app:layout_constraintHorizontal_bias="0.813"
+        android:layout_marginBottom="114dp" />
 
     <TextView
         android:id="@+id/txt_mtemp_unwichtig"
@@ -75,7 +75,7 @@
         android:layout_height="35dp"
         android:ems="10"
         android:inputType="number"
-        android:maxLength="2"
+        android:maxLength="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -89,7 +89,7 @@
         android:layout_height="35dp"
         android:ems="10"
         android:inputType="number"
-        android:maxLength="2"
+        android:maxLength="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -103,7 +103,7 @@
         android:layout_height="35dp"
         android:ems="10"
         android:inputType="number"
-        android:maxLength="2"
+        android:maxLength="3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintLeft_toLeftOf="parent"
