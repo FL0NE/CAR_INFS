@@ -4,13 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.tsue.dsa.tsue.start">
+    android:background="@color/backgroundcolor"
+    tools:context="com.tsue.dsa.tsue.StartActivity">
 
     <Button
         android:id="@+id/btn_strt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
+        android:textColor="@color/txtColor"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.755"
@@ -38,9 +41,10 @@
         android:layout_height="36dp"
         android:gravity="center"
         android:text="Bitte wählen Sie Ihr Gerät aus!"
+        android:textColor="@color/txtColor"
         android:textScaleX="1"
         android:textSize="14sp"
-        android:textStyle="normal"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.288"
@@ -53,6 +57,7 @@
         android:layout_height="46dp"
         android:fontFamily="serif"
         android:text="Willkommen!"
+        android:textColor="@color/txtColor"
         android:textSize="30sp"
         android:textStyle="bold|italic"
 
