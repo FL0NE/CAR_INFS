@@ -113,26 +113,25 @@ public class MyOBDCommand extends ObdCommand {
      * Sets the return value of the getCalculatedResult to the text view, given in the constructor.
      */
     public void updateUI() {
-<<<<<<< HEAD
-        textViewUpdate.setText(getCalculatedResult());
-        if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
-            progressbarUpdate.setProgress(getCalculatedPercentage());
-=======
-        String value = getCalculatedResult();
-        try {
-            if (value == null || value.equals("") || value.isEmpty() || textViewUpdate == null) {
-                return;
-            }
-            Setting setting = SettingsManager.getSetting();
-            Log.i("info", "fuel -> " + setting.getFuel());
-            textViewUpdate.setText(value);
-            if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
-                progressbarUpdate.setProgress(getCalculatedPercentage());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
->>>>>>> a64e2900a10bc72357938b4fcfbc0d65787549c3
+        if (textViewUpdate != null) {
+            textViewUpdate.setText(getCalculatedResult());
         }
+        if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
+            String value = getCalculatedResult();
+            try {
+                if (value == null || value.equals("") || value.isEmpty() || textViewUpdate == null) {
+                    return;
+                }
+                Setting setting = SettingsManager.getSetting();
+                Log.i("info", "fuel -> " + setting.getFuel());
+                textViewUpdate.setText(value);
+                if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
+                    progressbarUpdate.setProgress(getCalculatedPercentage());
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
+        }
     }
 }
