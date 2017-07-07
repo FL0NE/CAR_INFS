@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.tsue.dsa.tsue.R;
 import com.tsue.dsa.tsue.model.ModeOptions;
 import com.tsue.dsa.tsue.model.Modes;
+import com.tsue.dsa.tsue.obd.ModifierCalculator;
 import com.tsue.dsa.tsue.obd.MyOBDCommand;
 import com.tsue.dsa.tsue.obd.PeriodicOBDConnector;
 
@@ -67,27 +68,57 @@ public class OBDComandHandler {
     }
 
     public void createCommands() {
+        ModifierCalculator percentage = new ModifierCalculator() {
+            @Override
+            public double calculateModifier(double resultA, double resultB) {
+                return resultA * 100 / 255.0;
+            }
+        };
+        ModifierCalculator distance = new ModifierCalculator() {
+            @Override
+            public double calculateModifier(double resultA, double resultB) {
+                return 256 * resultA + resultB;
+            }
+        };
+        ModifierCalculator temp = new ModifierCalculator() {
+            @Override
+            public double calculateModifier(double resultA, double resultB) {
+                return resultA - 40;
+            }
+        };
+        ModifierCalculator rpm = new ModifierCalculator() {
+            @Override
+            public double calculateModifier(double resultA, double resultB) {
+                return (256 * resultA + resultB) * 0.25;
+            }
+        };
+        ModifierCalculator speed = new ModifierCalculator() {
+            @Override
+            public double calculateModifier(double resultA, double resultB) {
+                return resultA;
+            }
+        };
+
         MyOBDCommand[] commands = new MyOBDCommand[]{
-                createSingleCommand(ModeOptions.THROTTLE_POS, 0.392156862745098, throttlePosTextView),
-                createSingleCommand(ModeOptions.DISTANCE, 1, distanceTextView),
-//                createSingleCommand(ModeOptions.TIME, 1, timeTextView),
-                createSingleCommand(ModeOptions.AMBIENT_TEMP, 1, ambientTempTextView),
-                createSingleCommand(ModeOptions.RPM, 64.251, rpmTextView, rpmProgressBar),
-                createSingleCommand(ModeOptions.SPEED, 1, speedTextView, speedProgressBar),
-                createSingleCommand(ModeOptions.TANK, 1, tankTextView, tankProgressBar),
-                createSingleCommand(ModeOptions.COOLANT_TEMP, 1, coolantTempTextView, coolantTempProgressBar),
-                createSingleCommand(ModeOptions.ENGINE_LOAD, 1, engineLoadTextView, engineLoadProgressBar)
+                createSingleCommand(ModeOptions.THROTTLE_POS, percentage, throttlePosTextView, throttleProgressBar),
+                createSingleCommand(ModeOptions.DISTANCE, distance, distanceTextView),
+//                createSingleCommand(ModeOptions.TIME, distance, timeTextView),
+                createSingleCommand(ModeOptions.AMBIENT_TEMP, temp, ambientTempTextView),
+                createSingleCommand(ModeOptions.RPM, rpm, rpmTextView, rpmProgressBar),
+                createSingleCommand(ModeOptions.SPEED, speed, speedTextView, speedProgressBar),
+                createSingleCommand(ModeOptions.TANK, percentage, tankTextView, tankProgressBar),
+                createSingleCommand(ModeOptions.COOLANT_TEMP, temp, coolantTempTextView, coolantTempProgressBar),
+                createSingleCommand(ModeOptions.ENGINE_LOAD, percentage, engineLoadTextView, engineLoadProgressBar)
         };
         connectToBluetooth(commands);
     }
-
-    private MyOBDCommand createSingleCommand(ModeOptions option, double modifier, TextView textView, ProgressBar progressBar) {
-        MyOBDCommand result = new MyOBDCommand(Modes.SHOW_CURRENT_DATA, option, modifier, textView, progressBar);
+    private MyOBDCommand createSingleCommand(ModeOptions option, ModifierCalculator modifier, TextView textView, ProgressBar progressBar) {
+        MyOBDCommand result = new MyOBDCommand(activity, Modes.SHOW_CURRENT_DATA, option, modifier, textView, progressBar);
         return result;
     }
 
-    private MyOBDCommand createSingleCommand(ModeOptions option, double modifier, TextView textView) {
-        MyOBDCommand result = new MyOBDCommand(Modes.SHOW_CURRENT_DATA, option, modifier, textView);
+    private MyOBDCommand createSingleCommand(ModeOptions option, ModifierCalculator modifier, TextView textView) {
+        MyOBDCommand result = new MyOBDCommand(activity, Modes.SHOW_CURRENT_DATA, option, modifier, textView);
         return result;
     }
 

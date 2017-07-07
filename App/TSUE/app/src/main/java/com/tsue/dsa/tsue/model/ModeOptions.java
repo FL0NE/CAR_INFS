@@ -12,7 +12,7 @@ public enum ModeOptions {
     MAF("10"),
     TANK("03"),
     DISTANCE("31"),
-    TIME("4E"),
+    TIME("1F"),
     AMBIENT_TEMP("46"),
     ENGINE_LOAD("04");
 
