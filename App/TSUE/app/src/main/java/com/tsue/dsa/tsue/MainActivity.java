@@ -74,16 +74,16 @@ public class MainActivity extends Activity implements OnDataChangedListener {
         });
 
         //TEST ENDE
+        Setting setting = SettingsManager.loadSettings(getSharedPreferences("settings",0));
 
-
-        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
-        Setting setting = new Setting();
-        setting.setEnableSound(preferences.getBoolean(SettingsManager.SOUND_ENABLED_KEY, false));
-        setting.setEngineLoad(Double.valueOf(preferences.getString((SettingsManager.ENGINE_LOAD_KEY), 0.0 + "")));
-        setting.setEngineTemp(Double.valueOf(preferences.getString(SettingsManager.ENGINE_TEMP_KEY, 0.0 + "")));
-        setting.setFuel(Double.valueOf(preferences.getString(SettingsManager.FUEL_KEY, 0.0 + "")));
-        setting.setSpeed(Double.valueOf(preferences.getString(SettingsManager.SPEED, 0.0 + "")));
-        SettingsManager.setSetting(setting);
+//        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
+//        Setting setting = new Setting();
+//        setting.setEnableSound(preferences.getBoolean(SettingsManager.SOUND_ENABLED_KEY, false));
+//        setting.setEngineLoad(Double.valueOf(preferences.getString((SettingsManager.ENGINE_LOAD_KEY), 0.0 + "")));
+//        setting.setEngineTemp(Double.valueOf(preferences.getString(SettingsManager.ENGINE_TEMP_KEY, 0.0 + "")));
+//        setting.setFuel(Double.valueOf(preferences.getString(SettingsManager.FUEL_KEY, 0.0 + "")));
+//        setting.setSpeed(Double.valueOf(preferences.getString(SettingsManager.SPEED, 0.0 + "")));
+//        SettingsManager.setSetting(setting);
         registerOnDataChangedListener();
     }
 
