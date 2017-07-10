@@ -129,6 +129,7 @@ public class MainActivity extends Activity implements OnDataChangedListener {
                 bluetoothDevice = null;
             }
         });
+    }
     @Override
     public void engineLoadChanged(Double load) {
 
