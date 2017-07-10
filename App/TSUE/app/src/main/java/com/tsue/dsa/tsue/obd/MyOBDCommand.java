@@ -35,6 +35,7 @@ public class MyOBDCommand extends ObdCommand {
     private TextView textViewUpdate;
     private ModeOptions option;
     private List<OnDataChangedListener> listener = new ArrayList<>();
+    private MediaPlayer mediaPlayer;
     Unit unit = null;
 
 //    /**
@@ -58,6 +59,7 @@ public class MyOBDCommand extends ObdCommand {
         this.option = option;
         this.progressbarUpdate = progressbarUpdate;
         this.activity = activity;
+        mediaPlayer = MediaPlayer.create(activity, R.raw.warning2);
 
     }
 
@@ -125,11 +127,12 @@ public class MyOBDCommand extends ObdCommand {
      * Sets the return value of the getCalculatedResult to the text view, given in the constructor.
      */
     public void updateUI() {
-
+//        if (mediaPlayer.isPlaying()) {
+//            mediaPlayer.stop();
+//        }
         try {
-
-
             if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
+
                 String value = getCalculatedResult();
                 if (value == null || value.isEmpty()) {
                     return;
@@ -143,16 +146,14 @@ public class MyOBDCommand extends ObdCommand {
                 double engineLoad = setting.getEngineLoad();
                 double temp = setting.getEngineTemp();
                 double speed = setting.getSpeed();
-                if (option == ModeOptions.SPEED) {
+                if (option == ModeOptions.SPEED && Integer.parseInt(value) > speed) {
                     DataManager.onSpeedChanged(Double.valueOf(value));
+                    if (setting.isEnableSound()) {
+                        mediaPlayer.start();
+                    }
+
                 }
-                MediaPlayer mediaPlayer = MediaPlayer.create(activity, R.raw.test_sound);
-                if (setting.isEnableSound()) {
-                    mediaPlayer.start();
-                }
-                if (mediaPlayer.isPlaying() && !setting.isEnableSound()) {
-                    mediaPlayer.stop();
-                }
+
                 textViewUpdate.setText(value);
                 if (option == ModeOptions.THROTTLE_POS || option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
                     progressbarUpdate.setProgress(percentage);

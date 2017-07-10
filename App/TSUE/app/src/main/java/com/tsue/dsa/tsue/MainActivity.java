@@ -66,9 +66,9 @@ public class MainActivity extends Activity implements OnDataChangedListener {
 
         //FONT
 
-        final ViewGroup mContainer = (ViewGroup) findViewById(android.R.id.content).getRootView();
-        final Typeface mFont = Typeface.createFromAsset(getAssets(), "advent.ttf");
-        Parameters.setAppFont(mContainer, mFont);
+//        final ViewGroup mContainer = (ViewGroup) findViewById(android.R.id.content).getRootView();
+//        final Typeface mFont = Typeface.createFromAsset(getAssets(), "advent.ttf");
+//        Parameters.setAppFont(mContainer, mFont);
 
         //ENDE FONT
 
@@ -85,7 +85,7 @@ public class MainActivity extends Activity implements OnDataChangedListener {
 
         //TEST ENDE
         Setting setting = SettingsManager.loadSettings(PreferenceManager.getDefaultSharedPreferences(this));
-
+        SettingsManager.setSetting(setting);
 
 //        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
 //        Setting setting = new Setting();

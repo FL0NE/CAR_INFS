@@ -18,13 +18,20 @@ public class DataManager {
     public static void subscribeMain(MainActivity activity) {
         mainActivity = activity;
     }
+
     public static void subscribeSpeed(SpeedActivity activity) {
         speedActivity = activity;
     }
 
     public static void onSpeedChanged(double speed) {
-        mainActivity.speedLoadChanged(speed);
-        speedActivity.speedLoadChanged(speed);
+        if (mainActivity != null) {
+            mainActivity.speedLoadChanged(speed);
+
+        }
+        if (speedActivity != null) {
+            speedActivity.speedLoadChanged(speed);
+        }
+
     }
 
 }
