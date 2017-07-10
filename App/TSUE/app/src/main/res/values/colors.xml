@@ -3,8 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#224fa3</color>
-    <color name="txtColor">#000000</color>
-    <color name="backgroundcolor">#b7acac</color>
+    <color name="txtColor">#e5e5e5</color>
+    <color name="backgroundcolor">#2c3e50</color>
     <color name="pgbColor">#3F51B5</color>
     <color name="cicleCenterColor">#3F51B5</color>
     <color name="save">#1cb2ff</color>
