@@ -64,7 +64,7 @@ public class MainActivity extends Activity implements OnDataChangedListener {
 
         //TEST BUTTON
 
-        Button tstbtn = (Button) findViewById(R.id.btn_test_2);
+        Button tstbtn = (Button) findViewById(R.id.btn_test);
         tstbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,33 +120,34 @@ public class MainActivity extends Activity implements OnDataChangedListener {
             }
         });
     }
+
     @Override
-    public void engineLoadChanged(double load) {
+    public void engineLoadChanged(Double load) {
 
     }
 
     @Override
-    public void throttleLoadChanged(double load) {
+    public void throttleLoadChanged(Double load) {
 
     }
 
     @Override
-    public void fuelLoadChanged(double load) {
+    public void fuelLoadChanged(Double load) {
 
     }
 
     @Override
-    public void rpmLoadChanged(double load) {
+    public void rpmLoadChanged(Double load) {
 
     }
 
     @Override
-    public void speedLoadChanged(double load) {
-        Log.i("speed", load+"");
+    public void speedLoadChanged(Double load) {
+
     }
 
     @Override
-    public void engineTempChanged(double load) {
+    public void engineTempChanged(Double load) {
 
     }
 }

@@ -44,12 +44,13 @@ public class SettingsManager {
     }
 
     public static Setting loadSettings(SharedPreferences preferences) {
-        Setting setting = new Setting();
-        setting.setEnableSound(preferences.getBoolean(SettingsManager.SOUND_ENABLED_KEY, false));
-        setting.setEngineLoad(Double.valueOf(preferences.getString((SettingsManager.ENGINE_LOAD_KEY), 0.0 + "")));
-        setting.setEngineTemp(Double.valueOf(preferences.getString(SettingsManager.ENGINE_TEMP_KEY, 0.0 + "")));
-        setting.setFuel(Double.valueOf(preferences.getString(SettingsManager.FUEL_KEY, 0.0 + "")));
-        setting.setSpeed(Double.valueOf(preferences.getString(SettingsManager.SPEED, 0.0 + "")));
-        return setting;
+        Setting set = new Setting();
+        set.setEnableSound(preferences.getBoolean(SettingsManager.SOUND_ENABLED_KEY, false));
+        set.setEngineLoad(Double.valueOf(preferences.getString((SettingsManager.ENGINE_LOAD_KEY), 0.0 + "")));
+        set.setEngineTemp(Double.valueOf(preferences.getString(SettingsManager.ENGINE_TEMP_KEY, 0.0 + "")));
+        set.setFuel(Double.valueOf(preferences.getString(SettingsManager.FUEL_KEY, 0.0 + "")));
+        set.setSpeed(Double.valueOf(preferences.getString(SettingsManager.SPEED, 0.0 + "")));
+        setting = set;
+        return set;
     }
 }
