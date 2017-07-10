@@ -47,7 +47,7 @@ public class SettingsActivity extends Activity {
         engineTemp = (EditText) findViewById(R.id.num_Mtemp);
         speed = (EditText) findViewById(R.id.num_maxSpeed);
         soundSwitch = (Switch) findViewById(R.id.sound_switch);
-        Setting setting = SettingsManager.loadSettings(getPreferences(Context.MODE_PRIVATE));
+        Setting setting = SettingsManager.loadSettings(getSharedPreferences("settings",0));
         soundSwitch.setChecked(setting.isEnableSound());
         benzin.setText(setting.getFuel()+"");
         engineLoad.setText(setting.getEngineLoad()+"");

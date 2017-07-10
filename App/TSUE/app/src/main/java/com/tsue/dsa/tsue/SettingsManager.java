@@ -27,8 +27,8 @@ public class SettingsManager {
             setting.setEnableSound(false);
             setting.setEngineLoad(0.0);
             setting.setEngineTemp(0.0);
-            setting.setFuel(0.0);
-            setting.setSpeed(0.0);
+            setting.setFuel(90.0);
+            setting.setSpeed(100.0);
         }
         return setting;
     }
@@ -41,16 +41,16 @@ public class SettingsManager {
         editor.putString(FUEL_KEY, setting.getFuel() + "");
         editor.putString(SPEED, setting.getSpeed() + "");
         editor.apply();
+        editor.commit();
     }
 
     public static Setting loadSettings(SharedPreferences preferences) {
         Setting set = new Setting();
-        set.setEnableSound(preferences.getBoolean(SettingsManager.SOUND_ENABLED_KEY, false));
-        set.setEngineLoad(Double.valueOf(preferences.getString((SettingsManager.ENGINE_LOAD_KEY), 0.0 + "")));
-        set.setEngineTemp(Double.valueOf(preferences.getString(SettingsManager.ENGINE_TEMP_KEY, 0.0 + "")));
-        set.setFuel(Double.valueOf(preferences.getString(SettingsManager.FUEL_KEY, 0.0 + "")));
-        set.setSpeed(Double.valueOf(preferences.getString(SettingsManager.SPEED, 0.0 + "")));
-        setting = set;
+        set.setEnableSound(preferences.getBoolean(SOUND_ENABLED_KEY, false));
+        set.setEngineLoad(Double.valueOf(preferences.getString((ENGINE_LOAD_KEY), 0.0 + "")));
+        set.setEngineTemp(Double.valueOf(preferences.getString(ENGINE_TEMP_KEY, 0.0 + "")));
+        set.setFuel(Double.valueOf(preferences.getString(FUEL_KEY, 90.0 + "")));
+        set.setSpeed(Double.valueOf(preferences.getString(SPEED, 100.0 + "")));
         return set;
     }
 }
