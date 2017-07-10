@@ -5,10 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.github.anastr.speedviewlib.base.Gauge;
+import com.tsue.dsa.tsue.utils.OnDataChangedListener;
 
-public class SpeedActivity extends AppCompatActivity {
-
-public class SpeedActivity extends AppCompatActivity implements OnDataChangedListener{
+public class SpeedActivity extends AppCompatActivity implements OnDataChangedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
