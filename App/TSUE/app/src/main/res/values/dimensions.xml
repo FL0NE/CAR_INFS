@@ -3,4 +3,7 @@
     <dimen name="buttons">50dp</dimen>
     <dimen name="txt_size">20dp</dimen>
     <dimen name="einstellungen_Size">40dp</dimen>
+    <dimen name="willkommenSize">40dp</dimen>
+    <dimen name="verticalSpacing">10dp</dimen>
+    <dimen name="horizontalSpacing">10dp</dimen>
 </resources>

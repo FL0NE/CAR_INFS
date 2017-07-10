@@ -7,10 +7,9 @@ import android.util.Log;
 import com.github.anastr.speedviewlib.base.Speedometer;
 import com.tsue.dsa.tsue.utils.DataManager;
 import com.tsue.dsa.tsue.utils.OnDataChangedListener;
+import com.tsue.dsa.tsue.utils.OnDataChangedListener;
 
 public class SpeedActivity extends AppCompatActivity implements OnDataChangedListener {
-
-    private Speedometer speedometer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

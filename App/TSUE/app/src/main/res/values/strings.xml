@@ -6,5 +6,7 @@
     <string name="RPM">RPM</string>
     <string name="Geschwindigkeit">KM/H</string>
     <string name="Motortemperatur">MOTORTEMP</string>
+    <string name="TxtWarnung">Bitte wählen Sie einen Wert aus, bei dem Sie gewarnt werden wollen!</string>
+    <string name="Einstellungen">Einstellungen</string>
 
 </resources>
