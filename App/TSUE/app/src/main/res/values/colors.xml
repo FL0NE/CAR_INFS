@@ -3,8 +3,12 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#224fa3</color>
+<<<<<<< HEAD
     <color name="txtColor">#ffffff</color>
     <color name="backgroundcolor">#383636</color>
+=======
+    <color name="backgroundcolor">#b7acac</color>
+>>>>>>> 5ba564ec193347cdee2ae21f26e940c1a549cca4
     <color name="pgbColor">#3F51B5</color>
     <color name="cicleCenterColor">#3F51B5</color>
     <color name="save">#1cb2ff</color>
