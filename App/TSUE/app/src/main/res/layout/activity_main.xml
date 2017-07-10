@@ -56,7 +56,6 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="161dp"
         android:layout_height="40dp"
-        android:progress="100"
         android:progressTint="@color/pgbColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.681"
@@ -367,12 +366,9 @@
         android:text="Test"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-
-        android:layout_marginRight="148dp" 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent" 
-
         android:layout_marginTop="4dp"
         android:layout_marginRight="157dp" />
 

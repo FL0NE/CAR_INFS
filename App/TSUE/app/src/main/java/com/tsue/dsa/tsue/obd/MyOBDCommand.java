@@ -131,7 +131,7 @@ public class MyOBDCommand extends ObdCommand {
 //            mediaPlayer.stop();
 //        }
         try {
-            if (option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
+            if (option == ModeOptions.DISTANCE || option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.AMBIENT_TEMP ||  option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
 
                 String value = getCalculatedResult();
                 if (value == null || value.isEmpty()) {

@@ -49,12 +49,12 @@ public class OBDComandHandler {
         this.rpmTextView = (TextView) activity.findViewById(R.id.rpm_wert);
         this.speedTextView = (TextView) activity.findViewById(R.id.kmh_wert);
         this.throttlePosTextView = (TextView) activity.findViewById(R.id.gas_wert);
-        this.coolantTempTextView = (TextView) activity.findViewById(R.id.aussenTemp_wert);
+        this.coolantTempTextView = (TextView) activity.findViewById(R.id.motortemp_wert);
         this.tankTextView = (TextView) activity.findViewById(R.id.tank_wert);
         this.distanceTextView = (TextView) activity.findViewById(R.id.entf_wert);
 //        this.timeTextView = activity.findViewById(R.id.txt_);
         this.ambientTempTextView = (TextView) activity.findViewById(R.id.aussenTemp_wert);
-        this.engineLoadTextView = (TextView) activity.findViewById(R.id.motortemp_wert);
+        this.engineLoadTextView = (TextView) activity.findViewById(R.id.auslastung_wert);
 
         this.throttleProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_gas);
         this.speedProgressBar = (ProgressBar) activity.findViewById(R.id.pbr_Spd);
