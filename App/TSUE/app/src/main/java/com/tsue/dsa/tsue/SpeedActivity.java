@@ -1,6 +1,7 @@
 package com.tsue.dsa.tsue;
 
 import android.content.Context;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,7 +20,7 @@ public class SpeedActivity extends AppCompatActivity implements OnDataChangedLis
         setContentView(R.layout.activity_speed);
         speedometer = (Speedometer) findViewById(R.id.pointerSpeedometer);
         DataManager.subscribeSpeed(this);
-        Setting setting = SettingsManager.loadSettings(getSharedPreferences("settings",0));
+        Setting setting = SettingsManager.loadSettings(PreferenceManager.getDefaultSharedPreferences(this));
         Double speed = setting.getSpeed();
         speedometer.setMaxSpeed(speed.intValue());
 
