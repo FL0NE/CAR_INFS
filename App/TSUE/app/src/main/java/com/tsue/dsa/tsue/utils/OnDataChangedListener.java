@@ -5,16 +5,16 @@ package com.tsue.dsa.tsue.utils;
  */
 
 public interface OnDataChangedListener {
-    void engineLoadChanged(double load);
+    void engineLoadChanged(Double load);
 
-    void throttleLoadChanged(double load);
+    void throttleLoadChanged(Double load);
 
-    void fuelLoadChanged(double load);
+    void fuelLoadChanged(Double load);
 
-    void rpmLoadChanged(double load);
+    void rpmLoadChanged(Double load);
 
-    void speedLoadChanged(double load);
+    void speedLoadChanged(Double load);
 
-    void engineTempChanged(double load);
+    void engineTempChanged(Double load);
 
 }

@@ -15,12 +15,9 @@ import android.widget.Spinner;
 import android.widget.Switch;
 
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
-import com.tsue.dsa.tsue.utils.DataManager;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
-import com.tsue.dsa.tsue.utils.OnDataChangedListener;
 
 import java.util.ArrayList;
-
 
 /**
  * Created by dsa on 06.07.2017.

@@ -366,7 +366,7 @@
         android:layout_height="wrap_content"
         android:text="Test"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
         android:layout_marginTop="4dp"
         android:layout_marginRight="157dp" />
 

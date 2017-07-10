@@ -86,6 +86,9 @@ public class MainActivity extends Activity implements OnDataChangedListener {
         SettingsManager.setSetting(setting);
     }
 
+    private void registerOnDataChangedListener() {
+        DataManager.subscribeMain(this);
+    }
 
 
     @Override
@@ -115,34 +118,33 @@ public class MainActivity extends Activity implements OnDataChangedListener {
                 bluetoothDevice = null;
             }
         });
-    }
     @Override
-    public void engineLoadChanged(double load) {
-
-    }
-
-    @Override
-    public void throttleLoadChanged(double load) {
+    public void engineLoadChanged(Double load) {
 
     }
 
     @Override
-    public void fuelLoadChanged(double load) {
+    public void throttleLoadChanged(Double load) {
 
     }
 
     @Override
-    public void rpmLoadChanged(double load) {
+    public void fuelLoadChanged(Double load) {
 
     }
 
     @Override
-    public void speedLoadChanged(double load) {
-        Log.i("speed", load+"");
+    public void rpmLoadChanged(Double load) {
+
     }
 
     @Override
-    public void engineTempChanged(double load) {
+    public void speedLoadChanged(Double load) {
+
+    }
+
+    @Override
+    public void engineTempChanged(Double load) {
 
     }
 }
