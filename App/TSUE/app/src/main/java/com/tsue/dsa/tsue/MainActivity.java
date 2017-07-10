@@ -66,10 +66,10 @@ public class MainActivity extends Activity implements OnDataChangedListener {
 
         //FONT
 
-        final ViewGroup mContainer = (ViewGroup) findViewById(android.R.id.content).getRootView();
+        /*final ViewGroup mContainer = (ViewGroup) findViewById(android.R.id.content).getRootView();
         final Typeface mFont = Typeface.createFromAsset(getAssets(), "advent.ttf");
         Parameters.setAppFont(mContainer, mFont);
-
+*/
         //ENDE FONT
 
         //TEST BUTTON
