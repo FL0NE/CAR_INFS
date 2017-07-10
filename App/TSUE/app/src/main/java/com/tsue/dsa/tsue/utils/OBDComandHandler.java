@@ -27,7 +27,6 @@ public class OBDComandHandler {
     private final TextView throttlePosTextView;
     private final TextView coolantTempTextView;
     private final TextView tankTextView;
-    private final TextView distanceTextView;
     //    private final TextView timeTextView;
     private final TextView ambientTempTextView;
     private final TextView engineLoadTextView;
@@ -51,7 +50,6 @@ public class OBDComandHandler {
         this.throttlePosTextView = (TextView) activity.findViewById(R.id.gas_wert);
         this.coolantTempTextView = (TextView) activity.findViewById(R.id.motortemp_wert);
         this.tankTextView = (TextView) activity.findViewById(R.id.tank_wert);
-        this.distanceTextView = (TextView) activity.findViewById(R.id.entf_wert);
 //        this.timeTextView = activity.findViewById(R.id.txt_);
         this.ambientTempTextView = (TextView) activity.findViewById(R.id.aussenTemp_wert);
         this.engineLoadTextView = (TextView) activity.findViewById(R.id.auslastung_wert);
@@ -99,7 +97,6 @@ public class OBDComandHandler {
 
         MyOBDCommand[] commands = new MyOBDCommand[]{
                 createSingleCommand(ModeOptions.THROTTLE_POS, percentage, throttlePosTextView, throttleProgressBar),
-                createSingleCommand(ModeOptions.DISTANCE, distance, distanceTextView),
 //                createSingleCommand(ModeOptions.TIME, distance, timeTextView),
                 createSingleCommand(ModeOptions.AMBIENT_TEMP, temp, ambientTempTextView),
                 createSingleCommand(ModeOptions.RPM, rpm, rpmTextView, rpmProgressBar),
