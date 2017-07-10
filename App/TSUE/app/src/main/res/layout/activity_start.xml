@@ -30,6 +30,7 @@
         android:paddingRight="10dp"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
