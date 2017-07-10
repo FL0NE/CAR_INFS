@@ -24,18 +24,21 @@
 
     <Spinner
         android:id="@+id/bluetooth_spinner_startscreen"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:paddingLeft="50dp"
         android:paddingRight="10dp"
         android:paddingTop="2dp"
         android:paddingBottom="2dp"
-
+        style="@style/MySpinnerStyle"
+        android:popupBackground="#67656c"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintVertical_bias="0.392" />
+    <!-- android:entries="@array/Gender_Selection_arrays"
+ android:prompt="@string/Gender_Selection"-->
 
     <TextView
         android:id="@+id/txt_Grtauswhln"

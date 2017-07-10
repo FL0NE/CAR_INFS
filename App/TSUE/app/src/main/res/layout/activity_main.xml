@@ -367,14 +367,11 @@
         android:text="Test"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-<<<<<<< HEAD
         android:layout_marginTop="4dp"
         android:layout_marginRight="148dp" />
-=======
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent" />
->>>>>>> 5ba564ec193347cdee2ae21f26e940c1a549cca4
         android:layout_marginTop="4dp"
         android:layout_marginRight="157dp" />
 

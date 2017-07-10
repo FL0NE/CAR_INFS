@@ -89,7 +89,7 @@ public class StartActivity extends Activity {
     }
 
     private void initAdapter() {
-        spinnerAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listItems);
+        spinnerAdapter = new ArrayAdapter<>(this, R.layout.spinner_style, listItems);       //support_simple_spinner_dropdown_item
         bluetoothDeviceSpinner.setAdapter(spinnerAdapter);
     }
 

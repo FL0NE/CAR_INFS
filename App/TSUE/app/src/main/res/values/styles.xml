@@ -8,4 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyTheme" parent="Theme.AppCompat.Light">
+        <item name="android:textAppearanceListItemSmall">@style/MySpinnerStyle</item>
+    </style>
+
+    <style name="MySpinnerStyle" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@color/txtColor</item>
+    </style>
 </resources>
