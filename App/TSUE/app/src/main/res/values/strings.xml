@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">TSUE</string>
-    <string name="Auslastung">AUSLASTUNG</string>
-    <string name="Pedal">PEDAL</string>
-    <string name="Tank">TANK</string>
+    <string name="Auslastung">Auslastung</string>
+    <string name="Pedal">Pedal</string>
+    <string name="Tank">Tank</string>
     <string name="RPM">RPM</string>
-    <string name="Geschwindigkeit">KM/H</string>
-    <string name="Motortemperatur">MOTORTEMP</string>
+    <string name="Geschwindigkeit">Km/h</string>
+    <string name="Motortemperatur">Motortemp</string>
     <string name="TxtWarnung">Bitte wählen Sie einen Wert aus, bei dem Sie gewarnt werden wollen!</string>
     <string name="Einstellungen">Einstellungen</string>
 

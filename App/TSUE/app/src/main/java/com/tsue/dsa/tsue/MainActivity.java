@@ -76,6 +76,7 @@ public class MainActivity extends Activity implements OnDataChangedListener {
         //TEST ENDE
         Setting setting = SettingsManager.loadSettings(getSharedPreferences("settings",0));
 
+
 //        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
 //        Setting setting = new Setting();
 //        setting.setEnableSound(preferences.getBoolean(SettingsManager.SOUND_ENABLED_KEY, false));
@@ -84,7 +85,7 @@ public class MainActivity extends Activity implements OnDataChangedListener {
 //        setting.setFuel(Double.valueOf(preferences.getString(SettingsManager.FUEL_KEY, 0.0 + "")));
 //        setting.setSpeed(Double.valueOf(preferences.getString(SettingsManager.SPEED, 0.0 + "")));
 //        SettingsManager.setSetting(setting);
-        registerOnDataChangedListener();
+        
     }
 
     private void registerOnDataChangedListener() {
@@ -119,8 +120,6 @@ public class MainActivity extends Activity implements OnDataChangedListener {
                 bluetoothDevice = null;
             }
         });
-    }
-
     @Override
     public void engineLoadChanged(Double load) {
 
