@@ -8,5 +8,6 @@
     <string name="Motortemperatur">Motortemp</string>
     <string name="TxtWarnung">Bitte wählen Sie einen Wert aus, bei dem Sie gewarnt werden wollen!</string>
     <string name="Einstellungen">Einstellungen</string>
+    <string name="Speedometer">Speedometer</string>
 
 </resources>
