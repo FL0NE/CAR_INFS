@@ -5,6 +5,7 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
@@ -47,7 +48,7 @@ public class SettingsActivity extends Activity {
         engineTemp = (EditText) findViewById(R.id.num_Mtemp);
         speed = (EditText) findViewById(R.id.num_maxSpeed);
         soundSwitch = (Switch) findViewById(R.id.sound_switch);
-        Setting setting = SettingsManager.loadSettings(getSharedPreferences("settings",0));
+        Setting setting = SettingsManager.loadSettings(PreferenceManager.getDefaultSharedPreferences(this));
         soundSwitch.setChecked(setting.isEnableSound());
         benzin.setText(setting.getFuel()+"");
         engineLoad.setText(setting.getEngineLoad()+"");
@@ -83,6 +84,6 @@ public class SettingsActivity extends Activity {
         setting.setSpeed(speed.getText().length() > 0 ? Double.valueOf(speed.getText().toString()) : 0.0);
         setting.setEnableSound(soundSwitch.isChecked());
         SettingsManager.setSetting(setting);
-        SettingsManager.saveSettings(this.getPreferences(Context.MODE_PRIVATE));
+        SettingsManager.saveSettings(PreferenceManager.getDefaultSharedPreferences(this));
     }
 }

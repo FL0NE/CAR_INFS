@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,7 +84,7 @@ public class MainActivity extends Activity implements OnDataChangedListener {
         });
 
         //TEST ENDE
-        Setting setting = SettingsManager.loadSettings(getSharedPreferences("settings",0));
+        Setting setting = SettingsManager.loadSettings(PreferenceManager.getDefaultSharedPreferences(this));
 
 
 //        SharedPreferences preferences = getPreferences(Context.MODE_PRIVATE);
