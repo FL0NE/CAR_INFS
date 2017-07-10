@@ -5,6 +5,7 @@ import android.bluetooth.BluetoothDevice;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,7 +15,9 @@ import android.widget.Spinner;
 import android.widget.Switch;
 
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
+import com.tsue.dsa.tsue.utils.DataManager;
 import com.tsue.dsa.tsue.utils.OBDComandHandler;
+import com.tsue.dsa.tsue.utils.OnDataChangedListener;
 
 import java.util.ArrayList;
 
@@ -53,7 +56,6 @@ public class SettingsActivity extends Activity {
         engineLoad.setText(setting.getEngineLoad()+"");
         engineTemp.setText(setting.getEngineTemp()+"");
         speed.setText(setting.getSpeed()+"");
-
     }
 
     private void addBluetoothSpinnerListener() {

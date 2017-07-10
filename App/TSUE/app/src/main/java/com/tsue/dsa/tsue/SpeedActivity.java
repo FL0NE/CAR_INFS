@@ -8,19 +8,41 @@ import com.github.anastr.speedviewlib.base.Gauge;
 
 public class SpeedActivity extends AppCompatActivity {
 
+public class SpeedActivity extends AppCompatActivity implements OnDataChangedListener{
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_speed);
+    }
 
+    @Override
+    public void engineLoadChanged(double load) {
 
-        Gauge speedometer = (Gauge) findViewById(R.id.pointerSpeedometer);
-        speedometer.speedTo(50);
-        speedometer.setMaxSpeed(200);
+    }
 
+    @Override
+    public void throttleLoadChanged(double load) {
 
+    }
 
+    @Override
+    public void fuelLoadChanged(double load) {
 
+    }
+
+    @Override
+    public void rpmLoadChanged(double load) {
+
+    }
+
+    @Override
+    public void speedLoadChanged(double load) {
+
+    }
+
+    @Override
+    public void engineTempChanged(double load) {
 
     }
 }
