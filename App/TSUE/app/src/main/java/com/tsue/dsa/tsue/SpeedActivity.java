@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.github.anastr.speedviewlib.base.Gauge;
+
 public class SpeedActivity extends AppCompatActivity {
 
     @Override

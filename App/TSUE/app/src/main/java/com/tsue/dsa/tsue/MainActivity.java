@@ -63,7 +63,7 @@ public class MainActivity extends Activity {
 
         //TEST BUTTON
 
-        Button tstbtn = (Button) findViewById(R.id.btn_test_2);
+        Button tstbtn = (Button) findViewById(R.id.btn_test);
         tstbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
