@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.media.MediaPlayer;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.github.anastr.speedviewlib.base.Speedometer;
 import com.github.pires.obd.commands.ObdCommand;
 import com.github.pires.obd.enums.AvailableCommandNames;
 import com.tsue.dsa.tsue.R;
@@ -131,7 +133,7 @@ public class MyOBDCommand extends ObdCommand {
 //            mediaPlayer.stop();
 //        }
         try {
-            if (option == ModeOptions.DISTANCE || option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.AMBIENT_TEMP ||  option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
+            if (option == ModeOptions.DISTANCE || option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD || option == ModeOptions.AMBIENT_TEMP || option == ModeOptions.THROTTLE_POS || option == ModeOptions.COOLANT_TEMP) {
 
                 String value = getCalculatedResult();
                 if (value == null || value.isEmpty()) {
@@ -147,20 +149,41 @@ public class MyOBDCommand extends ObdCommand {
                 double temp = setting.getEngineTemp();
                 double speed = setting.getSpeed();
                 if (option == ModeOptions.SPEED && Integer.parseInt(value) > speed) {
-                    DataManager.onSpeedChanged(Double.valueOf(value));
                     if (setting.isEnableSound()) {
                         mediaPlayer.start();
                     }
-
+                }
+                boolean enablesound = setting.isEnableSound();
+                int intvalue = Integer.parseInt(value);
+                if (option == ModeOptions.SPEED) {
+                    DataManager.onSpeedChanged(Double.valueOf(value));
+                }
+                if (option == ModeOptions.TANK && Integer.parseInt(value) < setting.getFuel()) {
+                    playSound(setting.isEnableSound());
+                }
+                if (option == ModeOptions.ENGINE_LOAD || intvalue > setting.getEngineLoad()) {
+                    playSound(enablesound);
+                }
+                if (option == ModeOptions.COOLANT_TEMP || intvalue > setting.getEngineTemp()) {
+                    playSound(enablesound);
                 }
 
                 textViewUpdate.setText(value);
                 if (option == ModeOptions.THROTTLE_POS || option == ModeOptions.SPEED || option == ModeOptions.RPM || option == ModeOptions.COOLANT_TEMP || option == ModeOptions.TANK || option == ModeOptions.ENGINE_LOAD) {
                     progressbarUpdate.setProgress(percentage);
                 }
+
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void playSound(boolean enable) {
+        Toast.makeText(activity,"Achtung ! Ein maximalweer wurde überschritten",Toast.LENGTH_LONG);
+        if (!enable) {
+            return;
+        }
+        mediaPlayer.start();
     }
 }

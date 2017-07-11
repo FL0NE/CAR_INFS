@@ -25,10 +25,10 @@ public class SettingsManager {
         if (setting == null) {
             setting = new Setting();
             setting.setEnableSound(false);
-            setting.setEngineLoad(0.0);
-            setting.setEngineTemp(0.0);
-            setting.setFuel(90.0);
-            setting.setSpeed(100.0);
+            setting.setEngineLoad(100);
+            setting.setEngineTemp(250);
+            setting.setFuel(0);
+            setting.setSpeed(130);
         }
         return setting;
     }
@@ -47,9 +47,9 @@ public class SettingsManager {
     public static Setting loadSettings(SharedPreferences preferences) {
         Setting set = new Setting();
         set.setEnableSound(preferences.getBoolean(SOUND_ENABLED_KEY, false));
-        set.setEngineLoad(Double.valueOf(preferences.getString((ENGINE_LOAD_KEY), 0.0 + "")));
-        set.setEngineTemp(Double.valueOf(preferences.getString(ENGINE_TEMP_KEY, 0.0 + "")));
-        set.setFuel(Double.valueOf(preferences.getString(FUEL_KEY, 90.0 + "")));
+        set.setEngineLoad(Double.valueOf(preferences.getString((ENGINE_LOAD_KEY),100 + "")));
+        set.setEngineTemp(Double.valueOf(preferences.getString(ENGINE_TEMP_KEY,250 + "")));
+        set.setFuel(Double.valueOf(preferences.getString(FUEL_KEY, 0 + "")));
         set.setSpeed(Double.valueOf(preferences.getString(SPEED, 100.0 + "")));
         return set;
     }

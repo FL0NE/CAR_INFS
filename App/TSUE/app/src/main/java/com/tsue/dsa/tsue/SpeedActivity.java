@@ -48,8 +48,8 @@ public class SpeedActivity extends AppCompatActivity implements OnDataChangedLis
 
     @Override
     public void speedLoadChanged(Double load) {
-        Log.i("test", load + "");
         speedometer.speedTo(Float.valueOf(load + ""));
+        Log.i("test", load + "");
     }
 
     @Override
