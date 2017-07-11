@@ -3,21 +3,16 @@ package com.tsue.dsa.tsue;
 import android.app.Activity;
 
 import android.bluetooth.BluetoothDevice;
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -25,7 +20,7 @@ import java.util.ArrayList;
 import com.tsue.dsa.tsue.utils.BluetoothDeivceManager;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
 import com.tsue.dsa.tsue.utils.DataManager;
-import com.tsue.dsa.tsue.utils.OBDComandHandler;
+import com.tsue.dsa.tsue.utils.OBDCommandHandler;
 import com.tsue.dsa.tsue.utils.OnDataChangedListener;
 
 
@@ -38,7 +33,7 @@ public class MainActivity extends Activity implements OnDataChangedListener {
     private ArrayList<String> listItems = new ArrayList<String>();
     private Spinner bluetoothSpinner;
     private BluetoothHelper bluetoothHelper;
-    private OBDComandHandler commandHandler;
+    private OBDCommandHandler commandHandler;
     private BluetoothDevice bluetoothDevice;
     private Setting setting;
 
@@ -47,7 +42,7 @@ public class MainActivity extends Activity implements OnDataChangedListener {
         super.onCreate(savedInstanceState);
         Log.d("lifecycle", "onCreate invoked");
         setContentView(R.layout.activity_main);
-        commandHandler = new OBDComandHandler(this);
+        commandHandler = new OBDCommandHandler(this);
         bluetoothDevice = BluetoothDeivceManager.getBluetoothDevice();
         commandHandler.setBluetoothDevice(bluetoothDevice);
         commandHandler.createCommands();

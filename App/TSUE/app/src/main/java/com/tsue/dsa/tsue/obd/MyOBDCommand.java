@@ -61,7 +61,7 @@ public class MyOBDCommand extends ObdCommand {
         this.option = option;
         this.progressbarUpdate = progressbarUpdate;
         this.activity = activity;
-        mediaPlayer = MediaPlayer.create(activity, R.raw.warning2);
+        mediaPlayer = MediaPlayer.create(activity, R.raw.warning2_3);
 
     }
 
