@@ -38,6 +38,7 @@ public class MyOBDCommand extends ObdCommand {
     private ModeOptions option;
     private List<OnDataChangedListener> listener = new ArrayList<>();
     private MediaPlayer mediaPlayer;
+    private Toast toast;
     Unit unit = null;
 
 //    /**
@@ -129,6 +130,10 @@ public class MyOBDCommand extends ObdCommand {
      * Sets the return value of the getCalculatedResult to the text view, given in the constructor.
      */
     public void updateUI() {
+        if(toast != null) {
+            toast.cancel();
+        }
+
 //        if (mediaPlayer.isPlaying()) {
 //            mediaPlayer.stop();
 //        }
@@ -161,10 +166,13 @@ public class MyOBDCommand extends ObdCommand {
                 if (option == ModeOptions.TANK && Integer.parseInt(value) < setting.getFuel()) {
                     playSound(setting.isEnableSound());
                 }
-                if (option == ModeOptions.ENGINE_LOAD || intvalue > setting.getEngineLoad()) {
+                if (option == ModeOptions.ENGINE_LOAD &&  intvalue > setting.getEngineLoad()) {
                     playSound(enablesound);
                 }
-                if (option == ModeOptions.COOLANT_TEMP || intvalue > setting.getEngineTemp()) {
+                if (option == ModeOptions.COOLANT_TEMP &&  intvalue > setting.getEngineTemp()) {
+                    playSound(enablesound);
+                }
+                if(option == ModeOptions.SPEED && intvalue > setting.getSpeed()) {
                     playSound(enablesound);
                 }
 
@@ -180,7 +188,8 @@ public class MyOBDCommand extends ObdCommand {
     }
 
     private void playSound(boolean enable) {
-        Toast.makeText(activity,"Achtung ! Ein maximalweer wurde überschritten",Toast.LENGTH_LONG);
+        toast = Toast.makeText(activity,"Achtung ! Ein maximalweer wurde überschritten "+option.toString(),Toast.LENGTH_SHORT);
+        toast.show();
         if (!enable) {
             return;
         }

@@ -23,6 +23,7 @@ public class SpeedActivity extends AppCompatActivity implements OnDataChangedLis
         Setting setting = SettingsManager.loadSettings(PreferenceManager.getDefaultSharedPreferences(this));
         Double speed = setting.getSpeed();
         speedometer.setMaxSpeed(speed.intValue());
+        speedometer.setWithTremble(false);
     }
 
 
