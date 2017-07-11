@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.tsue.dsa.tsue.utils.BluetoothDeivceManager;
 import com.tsue.dsa.tsue.utils.BluetoothHelper;
-import com.tsue.dsa.tsue.utils.OBDComandHandler;
+import com.tsue.dsa.tsue.utils.OBDCommandHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class StartActivity extends Activity {
     private List<String> listItems = new ArrayList<String>();
     private ArrayAdapter<String> spinnerAdapter;
     private BluetoothHelper bluetoothHelper;
-    private OBDComandHandler comandHandler;
+    private OBDCommandHandler commandHandler;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class StartActivity extends Activity {
         initAdapter();
         initSpinner();
         requestBluetooth();
-        comandHandler = new OBDComandHandler(this);
+        commandHandler = new OBDCommandHandler(this);
     }
 
     @Override
@@ -65,7 +65,7 @@ public class StartActivity extends Activity {
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
                 String item = listItems.get(position);
                 currentSelectedDevice = bluetoothHelper.getDevice(item);
-                comandHandler.setBluetoothDevice(currentSelectedDevice);
+                commandHandler.setBluetoothDevice(currentSelectedDevice);
             }
 
             @Override

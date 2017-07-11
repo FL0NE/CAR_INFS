@@ -20,7 +20,7 @@ import java.util.List;
  * Created by DSA on 06.07.2017.
  */
 
-public class OBDComandHandler {
+public class OBDCommandHandler {
 
     private final Activity activity;
     private final TextView speedTextView;
@@ -42,7 +42,7 @@ public class OBDComandHandler {
     private PeriodicOBDConnector odbConnector;
     private String textOfSelectedButton;
 
-    public OBDComandHandler(Activity activity) {
+    public OBDCommandHandler(Activity activity) {
         this.activity = activity;
 
         this.rpmTextView = (TextView) activity.findViewById(R.id.rpm_wert);
@@ -97,7 +97,7 @@ public class OBDComandHandler {
 
         MyOBDCommand[] commands = new MyOBDCommand[]{
                 createSingleCommand(ModeOptions.THROTTLE_POS, percentage, throttlePosTextView, throttleProgressBar),
-//                createSingleCommand(ModeOptions.TIME, distance, timeTextView),
+//                createSingleCommand(ModeOptions.TIME, distance, timeTextView),36
                 createSingleCommand(ModeOptions.AMBIENT_TEMP, temp, ambientTempTextView),
                 createSingleCommand(ModeOptions.RPM, rpm, rpmTextView, rpmProgressBar),
                 createSingleCommand(ModeOptions.SPEED, speed, speedTextView, speedProgressBar),

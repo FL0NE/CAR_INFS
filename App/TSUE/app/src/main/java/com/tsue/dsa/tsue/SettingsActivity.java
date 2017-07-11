@@ -1,37 +1,17 @@
 package com.tsue.dsa.tsue;
 
 import android.app.Activity;
-import android.bluetooth.BluetoothDevice;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.provider.ContactsContract;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Switch;
-
-import com.tsue.dsa.tsue.utils.BluetoothHelper;
-import com.tsue.dsa.tsue.utils.OBDComandHandler;
-
-import java.util.ArrayList;
 
 /**
  * Created by dsa on 06.07.2017.
  */
 
 public class SettingsActivity extends Activity {
-    private Spinner bluetoothSpinner;
-    private ArrayAdapter<String> spinnerAdapter;
-    private ArrayList<String> listItems = new ArrayList<String>();
-    private BluetoothHelper bluetoothHelper;
-    private OBDComandHandler commandHandler;
-    private BluetoothDevice bluetoothDevice;
-
     private EditText benzin;
     private EditText engineLoad;
     private EditText engineTemp;
@@ -54,24 +34,6 @@ public class SettingsActivity extends Activity {
         engineLoad.setText(setting.getEngineLoad()+"");
         engineTemp.setText(setting.getEngineTemp()+"");
         speed.setText(setting.getSpeed()+"");
-    }
-
-    private void addBluetoothSpinnerListener() {
-        bluetoothSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                String item = listItems.get(position);
-                bluetoothDevice = bluetoothHelper.getDevice(item);
-                commandHandler.setBluetoothDevice(bluetoothDevice);
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                bluetoothDevice = null;
-            }
-        });
-
     }
 
     @Override
